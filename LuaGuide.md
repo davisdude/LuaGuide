@@ -10,7 +10,7 @@
 
 The purpose of this guide is to take a person who knows little/nothing about
 programming and to teach them Lua (version 5.2, though all versions numbered
-with a '5' as the first number should be virtually the same). By the end of the
+with a '5' as the first number should be very similar). By the end of the
 tutorial, the reader should be able to read and write Lua with general ease.
 
 ### Why Lua?
