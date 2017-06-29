@@ -376,7 +376,7 @@ instance:
 
 ```lua
 pi = 3.14
-r = 3
+r = 1
 area = pi * r ^ 2
 print( area ) -- 3.14
 ```
@@ -429,11 +429,11 @@ print( response ) -- I said "Yes way Jose!"
 
 Note the `\"` in the second example. This is called "escaping" and is used to
 contain double quotes in a string surrounded by double quotes. Basically, what
-these do is tell Lua that the string is that these quotes are part of the
-string and do not represent the end of the string. Note that, because we used
-single quotes in the first example, there was no need to escape the double
-quotes (though escaping the double quotes there wouldn't be wrong). Single
-quotes can also be escaped.
+these do is tell Lua that these quotes are part of the string and do not
+represent the end of the string. Note that, because we used single quotes in
+the first example, there was no need to escape the double quotes (though
+escaping the double quotes there wouldn't be wrong). Single quotes can also be
+escaped.
 
 Just as there are operators you can do on numbers, there are operators you can
 use on strings. You can combine strings with the "`..`" operator. This is
@@ -763,7 +763,8 @@ is ideal for this type of situation: the `for-loop`.
 
 Instead of writing everything multiple times, you can use what are called
 **numeric for-loops**. The name might be scary, but all it does is do something
-a certain amount of times.  This is the basic structure of this loop is:
+a certain amount of times.  This is the basic structure of this loop is (you
+do **not** need to run this):
 
 ```lua
 for VAR = START, END, INCREMENT do
@@ -797,7 +798,7 @@ Note that, because the increment is `1` by default, this loop is the same as
 
 ```lua
 for index = 1, 5 do
-	print( i )
+	print( index )
 end
 ```
 
@@ -864,8 +865,6 @@ end
 Note that in each of the above examples, if the loop would have executed one
 more time, the index would have surpassed `STOP`.
 
-Note that
-
 ### While-Loops
 
 While loops rely on [booleans](#booleans) to control their flow. A while-loop
@@ -887,7 +886,7 @@ end
 ]]
 ```
 
-A look at how the loop works help to understand why it prints 1-4 and not 5.
+A look at how the loop works helps to understand why it prints 1-4 and not 5.
 This is what the loop looks like at each step of execution (do **not** run the
 following code; it is simply an illustration of what is occurring):
 
@@ -933,7 +932,7 @@ end
 Because you have not assigned `index` yet, you will get the error "Attempt to
 compare a number with [nil](#nil)." This is because you're essentially asking
 the interpreter to compare `nil` with `5`. Because `nil` has no value, you
-cannot compare a number with it, hence causing the error above.
+cannot compare it with a number, hence causing the error above.
 
 As long as the statement between the `while` and `do` is `true`, the loop will
 continue to repeat. The general structure of a while-loop is:
@@ -957,7 +956,7 @@ interpreter:
 
 ```lua
 while true do
-	print( i )
+	print( 'infinite' )
 end
 ```
 
