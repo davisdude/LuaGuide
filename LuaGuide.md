@@ -246,12 +246,12 @@ You may have noticed the "`--`" above. These are called **single-line** or
 interpreter. Comments can be used to document your code. The space after `--`
 does not have to be present, though I prefer the way it looks with it.
 
-You can also do **multi-line comments**, which are like comments, but span
-multiple lines. They are opened with "`--[[`" and closed with "`]]`". Note that
-with multi-line comments, there must be **no** space between `--` and `[[`. You
-can use multi-line comments, for example, to make notes about valid variable
-names. Open up the command line and type `lua` to go into interactive mode and
-type the following:
+You can also do **multi-line** or **block comments**, which are like comments,
+but span multiple lines. They are opened with "`--[[`" and closed with "`]]`".
+Note that with multi-line comments, there must be **no** space between `--` and
+`[[`. You can use multi-line comments, for example, to make notes about valid
+variable names. Open up the command line and type `lua` to go into interactive
+mode and type the following:
 
 ```lua
 --[[
