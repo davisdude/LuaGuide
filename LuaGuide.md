@@ -420,10 +420,10 @@ to type, so that is what I will use throughout the tutorial.
 It is possible to mix single and double quotes, like so:
 
 ```lua
-sentance = 'She said "No way Jose!"'
+sentence = 'She said "No way Jose!"'
 response = "I said \"Yes way Jose!\""
 
-print( sentance ) -- She said "No way Jose!"
+print( sentence ) -- She said "No way Jose!"
 print( response ) -- I said "Yes way Jose!"
 ```
 
@@ -445,8 +445,8 @@ part2 = 'is'
 part3 = 'a'
 part4 = 'test'
 
-sentance = part1 .. ' ' .. part2 .. ' ' .. part3 .. ' ' .. part4
-print( sentance ) -- this is a test
+sentence = part1 .. ' ' .. part2 .. ' ' .. part3 .. ' ' .. part4
+print( sentence ) -- this is a test
 ```
 
 Note that strings can be concatenated even if they are not already assigned to
