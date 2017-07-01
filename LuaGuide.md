@@ -1070,7 +1070,7 @@ understand.
 
 You may have noticed that for-loops, while-loops, and repeat-until loops can
 all be used to do the same things. Start by creating a file called
-`02 Loops.lua` and creating a for-loop that counts from 1 to 10:
+`02 Basic Loops.lua` and creating a for-loop that counts from 1 to 10:
 
 ```lua
 for 1, 10, 1 do
@@ -1174,14 +1174,453 @@ until counter < 1
 
 ***Remember*** to add *lots* of comments to the file! These are your notes!
 
+
+
+
+
 ## If-Then Statements
+
+Sometimes when you are programming, you only want to do something **if** some
+other thing is true. For instance, you may want your while-loop to quit after
+it executes 100 times. You would use an **if-then** statement to do this.
+These follow the following structure (you should **not** run this file):
+
+```lua
+if ( BOOLEAN ) then
+	-- Code
+end
+```
+
+If `BOOLEAN` is `true`, the code executes. Otherwise, nothing happens. So in
+the example above, you might do something like this:
+
+```lua
+numberOfTimes = 1
+booleanThatWontChange = true
+
+while booleanThatWontChange do
+	numberOfTimes = numberOfTimes + 1
+	print( numberOfTimes )
+	if numberOfTimes > 99 then
+		print( 'That loop went on way too long!' )
+		break
+	end
+end
+```
+
+You may have noticed by now there are several different ways to compare
+numbers. You've seen some of them, but there are still several more, which will
+be discussed below.
+
+### Comparisons
+
+In math, there are several operators that you may be familiar with:
+
+- Equal to
+- Not equal to
+- Greater than
+- Less than
+- Greater than or equal to
+- Less than or equal to
+
+These can all be expressed in Lua as follows:
+
+| Mathematical expression  | Lua equivalent |
+|--------------------------|----------------|
+| Equal to                 | `==`           |
+| Not equal to             | `~=`           |
+| Greater than             | `>`            |
+| Less than                | `<`            |
+| Greater than or equal to | `>=`           |
+| Less than or equal to    | `<=`           |
+
+It may seem odd that "equal to" is `==`, but it actually makes sense: because
+`=` is for assignment, `==` is for comparison; it helps to distinguish the
+two.
+
+You have already seen some of the above operators in the
+[Basic Loops](#basic-loops) section. You can see the operators in-action with
+some examples (remember to run this on the interactive Lua command line):
+
+```lua
+if 3 > 2 then
+	print( '3 > 2' )
+end
+
+if 3 >= 3 then
+	print( '3 >= 3' )
+end
+
+if 3 ~= 2 then
+	print( '3 is not equal to 2' )
+end
+```
+
+Note that all of these commands work **only** for numbers, except for `==`:
+
+```lua
+str1 = 'This is a test'
+str2 = 'This is a test'
+
+if str1 == str2 then
+	print( 'These are both tests' )
+end
+
+bool1 = true
+bool2 = true
+
+if bool1 == bool2 then
+	print( 'These booleans are equal' )
+end
+```
+
+There is also another operator that *only* can be used with strings: `#`, the
+**length** operator.  This gives you the length of a string, in characters. For
+instance:
+
+```lua
+test1 = 'test'
+print( #test1 ) -- 4
+
+test2 = 'test2'
+print( #test2 ) -- 5
+
+test3 = 'test again'
+print( #test3 ) -- 10
+```
+
+#### Assigning Booleans
+
+You've seen before that you can assign booleans by giving it either a value of
+`true` or `false`. But a boolean can also be assigned by a value. For instance,
+if you wanted to represent that a comparison with a boolean, you could do:
+
+```lua
+age = 18
+
+canSmoke = age >= 18
+canDrink = ( age >= 21 )
+
+print( 'You can smoke: ', canSmoke ) -- You can smoke: true
+print( 'You can drink: ', canDrink ) -- You can smoke: false
+```
+
+Note that surrounding the condition in parenthesis, while not required, is
+recommended for clarity.
+
+Notice that for `canSmoke`, `age >= 18` returns `true`, because `18 >= 18`. For
+the `canDrink`, however, `18 >= 21` is `false`, so `canDrink` is `false`.
+
+This is actually how the comparison in if-then statements work, as well as the
+while-loops and repeat-until loops. It simply checks if the condition is equal
+to `true`. For instance, the following two if statements are equivalent:
+
+```lua
+name = 'John'
+
+if #name == 4 then
+	print( name .. ' is four letters long' )
+end
+
+-- or
+
+name = 'John'
+
+if ( #name == 4 ) == true then
+	print( name .. ' is four letters long' )
+end
+```
+
+Notice that the parenthesis in the second example are *completely* optional,
+though I **strongly** recommend using them for clarity's sake.
+
+### Else
+
+But what if the comparison is **not true**? Lua includes an extension of the
+if-then statement. This is  called **else**. If the condition is not `true`,
+the else branch is executed. The basic structure is (not that you should
+**not** run this):
+
+```lua
+if BOOLEAN then
+	-- Code
+else
+	-- Other code
+end
+```
+
+Here's an example:
+
+```lua
+if 3 > 5 then
+	print( 'What\'s going on?' )
+else
+	print( 'That\'s more like it!' )
+end
+-- That's more like it!
+```
+
+### Elseif
+
+Now we have cases for where the boolean is `true` and `false`. But what about
+when you want to make multiple comparisons? You *could* do something like this
+(note that you should **not** run this):
+
+```lua
+if firstBoolean then
+	-- Code
+else
+	if secondBoolean then
+		-- More code
+	else
+		if thirdBoolean then
+			-- Even more code
+		else
+			-- Etc
+		end
+	end
+end
+```
+
+This works, but can become unmanageable very quickly. Instead, Lua has what is
+called an **elseif** statement. This is for when a variable can be in multiple
+states, such as a string. For instance:
+
+```lua
+-- Run this several times, alternating `name` between 'Joe', 'Frank', and 'Bob'
+name = 'Joe'
+
+if name == 'Joe' then
+	print( 'Joe is not cool enough to be a part of our club!' )
+elseif name == 'Frank' then
+	print( 'Frank is almost cool enough to be a part of our club!' )
+elseif name == 'Bob' then
+	print( 'Bob is definitely not cool enough to be a part of our club!' )
+else
+	print( 'Who are you?' )
+end
+```
+
+Note that capitalization **does** matter. `'frank'` ~= `'Frank'` and so on. You
+can even have if statements within if-then statements. For instance, if the
+length of the name is the fallback condition for joining the secret club
+mentioned above, you could do this:
+
+```lua
+name = 'Joe'
+
+if name == 'Joe' then
+	print( 'Joe is not cool enough to be a part of our club!' )
+elseif name == 'Frank' then
+	print( 'Frank is almost cool enough to be a part of our club!' )
+elseif name == 'Bob' then
+	print( 'Bob is definitely not cool enough to be a part of our club!' )
+else
+	-- Only let them in if their name is longer than 6 letters
+	nameLength = #name
+	if nameLength > 6 then
+		print( 'You\'re in, ' .. name .. '!' )
+	elseif nameLength == 5 then
+		print( 'You\'re almost cool enough, ' .. name .. '.' )
+	else
+		print( 'Sorry, you\'re not cool enough, ' .. name .. '.' )
+	end
+end
+```
 
 ### Boolean Operators
 
-#### Comparisons
+Sometimes you would like to do the same thing if two conditions are met. You
+**could** do this:
 
-#### And
+```lua
+if cond1 then
+	-- Code
+elseif cond2 then
+	-- Exact same code
+else
+	-- Etc
+end
+```
+
+Other times you would like to only execute code if more than one condition is
+met. You **could** do this:
+
+```lua
+if cond1 then
+	if cond2 then
+		if cond3 then
+			-- Code
+		end
+	end
+end
+```
+
+Of course, as I'm sure you're probably thinking by now, there are *much* better
+alternatives. Both of the above *work*, but are not flexible enough to be real
+solutions. Instead, there are two **boolean operators**: **or** and **and**.
 
 #### Or
 
-#### Short-Circuiting
+Or works just like you'd expect it to: It returns true if *either* of the
+conditions are `true`. For instance:
+
+```lua
+print( ( 3 > 1 ) or ( 3 > 5 ) ) -- True
+print( ( 3 > 1 ) or ( 3 < 5 ) ) -- True
+print( ( 3 < 1 ) or ( 3 < 5 ) ) -- True
+print( ( 3 < 1 ) or ( 3 > 5 ) ) -- False
+```
+
+This can be utilized within the boolean condition for while loops *or* if-then
+statements (see what I did there?):
+
+```lua
+iterations = 0
+condition = false
+
+while ( iterations <= 100 ) or ( condition ) do
+	condition = false
+	iterations = iterations + 1
+	print( 'Still looping!' )
+end
+
+print( 'Done looping!' )
+```
+
+```lua
+name = 'Blake'
+
+if name == 'John' or #name == 5 then
+	print( 'Hiya, ' .. name )
+else
+	print( 'Who are you?' )
+end
+```
+
+#### And
+
+While `or` is used for *either* condition, `and` is used for *both* conditions.
+For example:
+
+```lua
+superCool = true
+superSmart = true
+
+if superCool and superSmart then
+	print( 'I am super cool and super smart' )
+elseif superCool or superSmart then
+	print( 'One out of two \'aint bad!' )
+else
+	print( 'At least I have my personality!' )
+end
+```
+
+Try changing around the booleans in the above example to see how that affects
+the execution of the code.
+
+#### Not
+
+While `and` and `or` work with two conditions, `not` works with only one. It
+**negates** the operation. Essentially what it does is swap the boolean. For
+instance:
+
+```lua
+cool = true
+notCool = not cool
+
+print( cool ) -- true
+print( notCool ) -- false
+```
+
+But `not` can be used on more than just booleans. In Lua, anything that is not
+`false` or `nil` is `true`, so `not` would make those statements `false`:
+
+```lua
+print( not true ) -- false
+print( not 100 ) -- false
+print( not 'My name is John' ) -- false
+
+print( not false ) -- true
+print( not nil ) -- true
+```
+
+You can get the "truthiness" of a value by negating it *twice*. For instance,
+you know that a string is "truthy", because
+
+```lua
+print( not not 'This is truthy' ) -- true
+```
+
+This is because `not true` is `false`, so `not not true` is the same as
+`not false`, which is `true`.
+
+Because `nil` is `false`, you have to be careful when you're doing if
+statements, otherwise a `nil` variable can have unexpected results:
+
+```lua
+superCool = true
+
+if SuperCool then
+	print( 'I am super cool!' )
+else
+	print( 'Why am I not cool? :(' )
+end
+```
+
+Note that, because `SuperCool` is not defined, it evaluates to `nil`, causing
+the statement to be `false`.
+
+### Exercises
+
+Create a file called `03 Conditionals.lua`. Within it, create an if-elseif-else
+statement that determines if a person can join your super secret club. The
+criterion are:
+
+- If they're a guy:
+	- They have to be over 21
+	- Their name cannot be over 7 letters long
+
+- If they're a girl:
+	- They have to be over 18 and under 30
+
+You need specific reasoning as to why they were denied admission to the club as
+well.
+
+There are several ways that you could implement this. Try it yourself first,
+before looking at the solution below:
+
+```lua
+name = 'John'
+age = 23
+male = true
+
+if male then
+	-- Male
+	if age >= 21 then
+		if #name <= 7 then
+			print( 'You\'re in, ' .. name .. '!' )
+			print( 'First round\'s on you!' )
+		else
+			print( 'Sorry, you\'re name is way too long' )
+			print( 'Not enough room on our name tags' )
+		end
+	else
+		print( 'Sorry, you\'ll need to come back when you\'re older' )
+	end
+else
+	-- Female
+	if age >= 18 then
+		if age <= 30 then
+			print( 'Come on in, ' .. name )
+		else
+			print( 'Sorry, you\'re way too old!' )
+			print( 'There\'s a retirement home across the street' )
+		end
+	else
+		print( 'You\'re not old enough!' )
+	end
+end
+```
+
+Of course, this is not the **only** implementation you can use.
