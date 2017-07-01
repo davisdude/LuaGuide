@@ -1,9 +1,5 @@
 # An Introduction to Lua
 
-
-
-
-
 ## Introduction
 
 ### Purpose
@@ -756,15 +752,16 @@ is difficult to change. Say, for instance, you want to print your name 10
 times. That means copying and pasting everything. (***Hopefully*** you didn't
 consider typing all of that!) This is unwieldy, but manageable. But what
 happens if you want to print your name ***100*** times? This would be a real
-pain to type and would be ridiculous. Thankfully, Lua includes a construct that
-is ideal for this type of situation: the `for-loop`.
+pain to type and would be ridiculous. But what about a **variable** number of
+times? This would be impossible with what you currently know.  Thankfully, Lua
+includes a construct that is ideal for this type of situation: the `for-loop`.
 
 ### Numeric For-Loops
 
 Instead of writing everything multiple times, you can use what are called
 **numeric for-loops**. The name might be scary, but all it does is do something
 a certain amount of times.  This is the basic structure of this loop is (you
-do **not** need to run this):
+should **not** run this):
 
 ```lua
 for VAR = START, END, INCREMENT do
@@ -802,20 +799,6 @@ for index = 1, 5 do
 end
 ```
 
-So, in the above example, if you wanted to print your name a certain amount of
-times, you would do something like this:
-
-```lua
-name = 'John Smith'
-times = 100
-
-for index = 1, times do
-	print( name )
-end
-```
-
-This is **much** better than typing that and changing it all the time.
-
 With most cases, you will want to increment by one, but you can increment by
 any real number. For instance, if you wanted even numbers, you could do:
 
@@ -832,6 +815,22 @@ end
 10
 ]]
 ```
+
+You can also use a variable as the `STOP` or increment. For instance, in the
+above example, where you wanted to print your name a certain amount of times,
+you would do something like this, changing `times` to the number of times you
+would like to print the person's name.
+
+```lua
+name = 'John Smith'
+times = 100
+
+for index = 1, times do
+	print( name )
+end
+```
+
+This is **much** better than typing that and changing it all the time.
 
 #### Using the Stop and Increment Controllers
 
@@ -980,13 +979,206 @@ end
 print( index ) -- 2
 ```
 
+Note that the break command **must** be before the `end` command, otherwise you
+will get an error. This is kind of complicated, but you need to remember that
+`break` must be at the end of a block of code.
+
 The `break` command ended the loop before the execution completed. This may not
 seem useful now, but it will become more useful later when you have learned
-about more advanced structures, such as `if-then` statements.
+about more advanced structures, such as `if-then` statements, which will be
+discussed in the next section.
+
+### Repeat-Until Loops
+
+Repeat-until loops are very similar to `while` loops. While `while` loops
+execute execute **while** a condition is `true`, `repeat-until` loops execute
+until a condition is met. These two loops have the same output, but their
+structure is very different:
+
+```lua
+-- while-loop
+i = 0
+while ( i < 5 ) do
+	i = i + 1
+end
+print( i ) -- 5
+
+-- repeat-until loop
+i = 0
+repeat
+	i = i + 1
+until ( i > 4 )
+
+print( i ) -- 5
+```
+
+You may be wondering: What is the advantage of using a `while` loop versus a
+`repeat` loop? Personal preference is certainly one preference, but there is
+one other advantage: a `repeat` loop will **always** execute *at least* one
+time, while `while` loops may not execute it at all. This may seem odd at
+first, but it makes sense: If the initial condition of a `while` loop is
+`false`, the loop never executes. Test the following loops out:
+
+```lua
+i = 5
+while i < 5 do
+	print( i )
+	i = i + 1
+end
+-- No output from the loop
+print( i ) -- 5
+
+i = 5
+repeat
+	print( i )
+	i = i + 1
+until i > 4
+-- 5
+print( i ) -- 6
+```
+
+Note that in both of `while` and `repeat` loops, you **can** surround the
+boolean expression with parenthesis if you'd like. In fact, all of the
+following are valid ways to express loops:
+
+```lua
+i = 0
+while i < 5 do
+	i = i + 1
+end
+print( i )
+
+i = 0
+while ( i < 5 ) do
+	i = i + 1
+end
+print( i )
+
+i = 0
+while i < 5 do i = i + 1 end
+print( i )
+```
+
+All of the following are valid, as well as several other ways. This is another
+one of the advantages of Lua: you don't have to format your code a certain way.
+As long as the entire word is complete (i.e. not separated by a space or new
+line), it doesn't matter how the code is formatted. I would **strongly**
+recommend avoiding the third method, however, as it is harder to read and
+understand.
+
+### Exercises
+
+You may have noticed that for-loops, while-loops, and repeat-until loops can
+all be used to do the same things. Start by creating a file called
+`02 Loops.lua` and creating a for-loop that counts from 1 to 10:
+
+```lua
+for 1, 10, 1 do
+	print( index )
+end
+```
+
+You should get an error saying `<name> expected near '1'`. That's because you
+forgot to assign `index`! Fix it by changing the loop to:
+
+```lua
+for index = 1, 10, 1 do
+	print( index )
+end
+```
+
+Now try going from 10 to 1 with a for-loop:
+
+```lua
+for index = 10, 1 do
+	print( index )
+end
+```
+
+You should notice that there is no new output. This is because the default
+increment is `1`. Because the index is already past `1`, the loop does nothing.
+To fix this, change the increment to `-1`.
+
+Now make a while-loop that counts from 1 to 10:
+
+```lua
+while counter < 10 do
+	counter = counter + 1
+	print( counter )
+end
+```
+
+You should get an error that says: `attempt to compare nil with a number`.
+That's because you never assigned `counter`. Assign counter to `1`. Now you
+should get an output, but wait! The loop prints `2` first, instead of `1`. To
+fix this, you need to change `counter` to be `0`. Note that this happens
+because you increment the variable, **then** output it, so while counter
+*starts* at `1`, it becomes `2` before it is displayed.
+
+Now make a while-loop that counts from 10 to 1:
+
+```lua
+downCounter = 10
+while downCounter < 1 do
+	downCounter = downCounter + 1
+	print( downCounter )
+end
+```
+
+When you run this, you should get no output. That's because the initial
+condition is not `true`, so it never executes. Change that to be
+
+```lua
+while downCounter > 1 do
+```
+
+You should get an infinite loop this time. Remember to break output by pressing
+`Ctrl` and `c` at the same time. Can you see why you get an infinite loop? It's
+because the condition will never change: 10 > 1, 11 > 1, and so on. You need
+to change the reassignment of `downCounter` to decrement (go down by one)
+instead of increment (increase by one).
+
+Finally, make a repeat-until loop that counts from 1 to 10 and another that
+counts from 10 to 1. The first one should look something like this:
+
+```lua
+repeat
+	print( counter )
+	counter = counter + 1
+until counter > 9
+```
+
+You may have been expecting an error because `counter` was not defined, but
+instead what you got was an infinite loop. Why is that? Because you used
+`counter` in the first while-loop you created. So you either need to reassign
+`counter` or choose another variable (and assign it). Reassign the variable
+here, like so:
+
+```lua
+counter = 0
+repeat
+	print( counter )
+	counter = counter + 1
+until counter > 9
+```
+
+Finally, use a repeat-until loop to count from 10 to 1, using the same variable
+as you used for the first repeat-until loop:
+
+```lua
+repeat
+	print( counter )
+	counter = counter - 1
+until counter < 1
+```
+
+***Remember*** to add *lots* of comments to the file! These are your notes!
 
 ## If-Then Statements
 
 ### Boolean Operators
+
+#### Comparisons
 
 #### And
 
