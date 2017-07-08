@@ -527,6 +527,27 @@ Additionally, having the `nil` value is useful for several somewhat complex
 reasons. These will be explained more later, but what you need to know now is
 that it allows you to check if a variable has been assigned or not.
 
+### The `type` Command
+
+Just like the `print` command is a part of Lua's standard library, so to is
+another command: `type`. The `type` command is used to get a variable's type.
+For instance, if you ran
+
+```lua
+print( type( 3 ) ) -- number
+```
+
+You would get `number`. That's because `3` is a number. You can see all the
+variable types represented:
+
+```lua
+print( type( 'This is a string' ) ) -- string
+print( type( true ) ) -- boolean
+print( type( nil ) ) -- nil
+```
+
+This command is useful for getting information about a variable.
+
 ### Why would I want to use variables?
 
 Variables are extremely useful and are the building blocks for a program.
