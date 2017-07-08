@@ -1640,8 +1640,62 @@ else
 		end
 	else
 		print( 'You\'re not old enough!' )
+end
+```
+
+When you run the file, if you've typed it **exactly** as I have, you should get
+the error `lua: 03 Conditionals.lua:29: 'end' expected (to close 'if' at line 1
+) near <eof>.` This error may seem confusing at first, but after inspection it
+is a little more clear: `<eof>` if just a fancy way to represent the **e**nd
+**o**f **f**ile. That's because you're missing the `end` to close the
+`-- Female` if-statement.
+
+Of course, this is not the **only** implementation you can use. As with any
+problem, there can be multiple solutions to one problem.
+
+Now say you want to do some error checking to make sure you don't get any
+errors if the user accidentally assigns the value incorrectly. Remember the
+[`type`](#the-type-command) command? You can use this with an if-statement to
+validate the input:
+
+```lua
+name = 123
+age = '23'
+male = nil
+
+if type( name ) ~= 'string' then
+	print( 'Invalid input: name must be a string' )
+elseif type( age ) ~= 'number' then
+	print( 'Invalid input: age must be a number' )
+elseif type( male ) ~= 'boolean' then
+	print( 'Invalid input: male must be a boolean' )
+else
+	if male then
+		-- Male
+		if age >= 21 then
+			if #name <= 7 then
+				print( 'You\'re in, ' .. name .. '!' )
+				print( 'First round\'s on you!' )
+			else
+				print( 'Sorry, you\'re name is way too long' )
+				print( 'Not enough room on our name tags' )
+			end
+		else
+			print( 'Sorry, you\'ll need to come back when you\'re older' )
+		end
+	else
+		-- Female
+		if age >= 18 then
+			if age <= 30 then
+				print( 'Come on in, ' .. name )
+			else
+				print( 'Sorry, you\'re way too old!' )
+				print( 'There\'s a retirement home across the street' )
+			end
+		else
+			print( 'You\'re not old enough!' )
 	end
 end
 ```
 
-Of course, this is not the **only** implementation you can use.
+
