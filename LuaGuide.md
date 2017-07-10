@@ -2,6 +2,10 @@
 
 ## Introduction
 
+Learning how to program is a very rewarding experience. Whether you're learning
+for school, your career, or just for fun, programming is a useful skill and
+does not need to be hard or complicated.
+
 ### Purpose
 
 The purpose of this guide is to take a person who knows little/nothing about
@@ -23,6 +27,14 @@ Lua that make it ideal as a first language:
 	  have are not present by default in Lua, you gain a better
 	  understanding of how the concept works by implementing it yourself.
 
+- The main thing to keep in mind when programming is that programming is very
+  literal. You have to tell the computer step-by-step what exactly you want it
+  to and how to do it. How much detail you include depends on the language that
+  you're using. Lua is good because it allows you to program without dealing
+  with unnecessary complications for beginners like "memory allocation" and
+  things like that. While these are useful for more advanced programmers, for
+  beginners, things like these tend to be complicated and confusing.
+
 - Lua is more forgiving than many languages. Many languages feature complex and
   confusing processes, such as "static typing" and "compiling." These can be
   confusing for first-time users. Because Lua does not feature these concepts,
@@ -32,6 +44,30 @@ Lua that make it ideal as a first language:
   not only how, but also why things are the way they are.
 
 - Installing Lua is very simple and straightforward.
+
+### Thinking Like a Computer
+
+Earlier, I mentioned that, when programming, you need to tell the computer what
+to do with step-by-step instructions. This can be difficult for people to get
+used to at first; they expect the computer to "know what they mean," which
+rarely happens. Think of a computer as a very literal person who does
+**exactly** what you tell them to. For instance, most people would be able to
+follow these instructions and understand what is going on:
+
+1. Set the toaster to the desired setting
+1. Put in bread as desired
+1. Retrieve the toast when it is ready
+1. Butter to taste
+
+Anybody can read this and know that you are making toast, and will be able to
+follow this recipe without difficulty. If you told a robot-chef to do this,
+however, you would run into a few problems. First of all, you never told the
+robot chef to *retrieve* the bread. Additionally, it probably has no idea what
+"as desired" or "to taste" means.
+
+When programming, you need to understand that the computer does *not* know what
+you are trying to do, nor does it care. It will do exactly what you tell it to
+do; nothing more, nothing less.
 
 ### Installing and Setting up an Editor
 
