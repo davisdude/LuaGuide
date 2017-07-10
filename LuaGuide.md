@@ -33,7 +33,7 @@ Lua that make it ideal as a first language:
 
 - Installing Lua is very simple and straightforward.
 
-### Installing and Configuring an Editor
+### Installing and Setting up an Editor
 
 In order to edit code, you need something called a **text editor**. An editor
 is what you use to write your code. Editors can be as simple or complex as you
@@ -41,138 +41,129 @@ would like them to be. You can even use Notepad to edit your Lua files, though
 I would **strongly** advise against this for several reasons. Primarily, it
 lacks syntax highlighting, which makes your code easier to read. It also lacks
 an advanced undo structure, which severely limits your ease-of-use. For most
-entry-level users, I recommend installing
-[Notepad++](http://notepad-plus-plus.org), as it is free, extremely
-straight-forward, and easy to use and install.
+entry-level users, I recommend installing ZeroBrane, an **IDE**, or
+**Integrated Development Environment** for Lua. What does "integrated
+development environment" mean? Basically, it makes programming in Lua easier by
+aiding in some common tasks. One big advantage is that it comes installed with
+several versions of Lua and is very easy to install:
 
-To make editing your files easier, change the **filetype association** for
-`.lua` files to make them open with Notepad++, that way you can easily
-double-click the file to open and edit it. The file type association tells your
-computer what program to use to open files with that extension. For instance,
-the file type association for `.docx` files is Microsoft Word.  To change the
-file type association, you need to do a few things:
+<center><img src="pictures/installing-zerobrane-01-homepage.png" 
+style="width: 75%;"/></center>
 
-1. View file extensions. You need to be able to view file extensions because it
-   makes creating Lua files easier. To do this:
+1. Go to [studio.zerobrane.com](https://studio.zerobrane.com)
+1. Select the "Download" tab on the right side of the page
 
-	- Open the file explorer
-	- Select `View`
-	- Click the box labeled `File name extensions`
+	<center><img src="pictures/installing-zerobrane-02-download-page.png"
+	style="width: 75%;"/></center>
 
-1. Create a file called `test.lua`. You need to create a Lua file in order to
-   change the file type association. To do this:
+1. Select the option "Take me to the download page this time" for now (unless
+   you're feeling generous). This program is available for free, but you can
+   find the development now (or at a later date if you desire).
 
-	- Right click within the file explorer
-	- Select the option `New`
-	- Select `Text Document`
-	- Give the file the name `test.lua`
-	- When prompted if you want to change the file type, select "Yes"
+	<center><img src="pictures/installing-zerobrane-03-download.png"
+	style="width: 75%;"/></center>
 
-1. Change the filetype association for `.lua` files. To do this:
+1. Select "Windows 32bit (exe installer)"
 
-	- Right-click on `test.lua`
-	- Select the option "Properties"
-	- Select "Opens With"
-	- Select "Change"
-	- Select "Show More Apps"
-	- Select "Browse for the App"
-	- Navigate to the directory where Notepad++ installed (probably
-	  `C:\Program Files (x86)\Notepad++`) and choose the `.exe` file.
 
-Now you should be able to open a Lua file with Notepad++ by double-clicking it.
-Test this by double-clicking the `test.lua` file you created earlier. It should
-now open with Notepad++.
+	<center><img
+	src="pictures/installing-zerobrane-04-choose-installer-location.png"
+	style="width: 75%;"/></center>
 
-### Command Line Basics
+1. If you get the option to choose where the installer is downloaded, put it
+   in your "Downloads" directory
+1. Once you've selected the directory, click "Save"
 
-The command line is an essential part of programming. While full knowledge of
-the command line is not needed, a basic knowledge is necessary. Essentially,
-the command line is like an extremely basic file-explorer that uses commands
-instead of using the mouse.
+	<center><img
+	src="pictures/installing-zerobrane-05-determine-architecture.png"
+	style="width: 75%;"/></center>
 
-To open the command prompt, either:
+1. Now you need to figure out if your computer is 32 or 64 bits. If you're not
+   sure, open the File Explorer and go to `C:\`. This will be found either
+   under `This PC` or `My Computer` depending on the age of your computer. If
+   you have a directory called `Program Files (x86)`, as pictured here, you are
+   using a 64 bit computer; if not, you're using a 32 bit computer.
 
-- Open the file-explorer and `shift + right-click`, then choose the option
-  that says, "Open command window here".
+	<center><img
+	src="pictures/installing-zerobrane-06-run-installer.png"
+	style="width: 75%;"/></center>
 
-- Click start (in the lower left-hand corner) and select `Run`. From there,
-  type in `cmd`.
+1. Now, run the installer. This can be done by navigating to the directory
+   where it was downloaded and double-clicking the installer. It should be
+   called something like `ZeroBraneStudioEduPack-1.60-win32.exe`.
 
-Just like the file-explorer, you can only work with one folder, or
-**directory** at a time. The directory that you're working with, also known as
-the **current directory**, is always displayed to the left of the `>` on the
-command prompt.
+	<center><img
+	src="pictures/installing-zerobrane-07-select-install-location.png"
+	style="width: 75%;"/></center>
 
-To view the contents of the current directory, use the command
-`dir`, which is short for **dir**ectory. This outputs all the files and
-directories within the current directory. You may notice there are two somewhat
-odd directories: "`.`" and "`..`". "`.`" represents the current directory,
-while "`..`" represents the **parent directory**, or the directory that
-contains the current directory.
+1. When you run the installer, you should be greeted by this pop-up dialog box.
+   If you can't read the text, try holding `Ctrl` and moving your mouse wheel.
+   Select the text under the heading `Destination folder` so that it appears
+   blue, like picture above.
 
-To change the current directory, use the command `cd NEWDIR`, where `NEWDIR` is
-the name of the new directory. `cd` stands for **c**hange **d**irectory. For
-instance, if you want to go up a level, type `cd ..`. Now, when you type `dir`,
-the previous current directory should now be visible as a directory.
+	<center><img
+	src="pictures/installing-zerobrane-08-choose-install-location.png"
+	style="width: 75%;"/></center>
 
-If you don't understand this, don't worry: In the first section there will be a
-guided example of how to do this.
+1. Now you need to choose where the program should be installed. For 64 bit
+   systems, install the program in `C:\Program Files (x86)\ZeroBrane` and for
+   32 bit systems, install the program in `C:\Program Files\ZeroBrane`. Note
+   that the location does not matter that much, it's just good practice to put
+   files in these locations so that they are easier to find later on. You will
+   probably be asked to grant administrator privileges, in which case, you
+   should say yes.
 
-### Installing Lua (for Windows)
+	<center><img src="pictures/installing-zerobrane-09-welcome-screen.png"
+	style="width: 75%;"/></center>
 
-Visit the [Lua website](http://lua.org) and follow the label that says
-"Download," then click "Binaries" at the top of the page (**not** the one
-towards the bottom of the page). Next, select the "Download" link on the left.
-Then scroll down to "LuaBinaries 5.2.4" and choose the file labeled something
-along the lines of `lua-5.2.4_WinXX_bin.zip`, where `XX` is either 64 or 32.
-This number represents the architecture of your computer. Most modern computers
-are 64 bits, though if you aren't sure, download the 32 bit one for now.
+1. Once the installation is completed, you should be greeted with a screen that
+   looks like this. Congratulations! Your installation is complete.
 
-Extract the `.zip` file and move the extracted directory to `C:\Program Files`
-if you installed the 64 bit one, or `C:\Program Files (x86)` if you installed
-the 32 bit one. The reasoning behind this is somewhat complex, but, basically,
-there are two predominant architectures: 32 and 64 bit. The `(x86)` specifies
-that the file is 32 bits.
+	<center><img src="pictures/installing-zerobrane-10-create-shortcut.png"
+	style="width: 75%;"/></center>
 
-Navigate to the directory where Lua was installed with the file-explorer and
-remove the `52` from the end of `lua52.exe`. This was included in the name by
-default because it makes it easier to work with multiple versions of Lua.
-Because we are only working with one version, however, it is simpler for now if
-we remove that from the name. Now try double-clicking `lua.exe`. It should open
-up Lua in what is called **interactive mode**. It should look like this:
+1. Next you will want to create a shortcut on your desktop so that it is
+   easier to run the program. To do this, close or minimize all open windows
+   and right-click on the desktop (**not** one of the icons). Move the mouse
+   down until you see the "New" option.
+1. From the new menu, choose the option "Shortcut" to create the shortcut on
+   your desktop.
 
-```
-Lua 5.2.4  Copyright (C) 1994-2017 Lua.org, PUC-Rio
->
-```
+	<center><img src="pictures/installing-zerobrane-11-shortcut-dialog.png"
+	style="width: 75%;"/></center>
 
-This is just information about the Lua version you're using and who developed
-it (PUC-Rio). Now you can run Lua commands! To exit this, close the window to
-the command prompt.
+1. You should be greeted with a prompt that looks something like the above.
+   Select "Browse" to locate the program.
 
-You can also run Lua by typing `"PATH\lua"` into your command line, where
-`"PATH"` is the path to your Lua executable (usually something like
-`C:\Program Files\lua-5.2.4\lua` or similar) surrounded by quotes.
-You can run Lua files by typing into your command line `"PATH\lua" file.lua"`
-where `file.lua` is the file you would like to execute. You can also enter
-interactive mode by typing `"PATH\lua"`. This should bring up the same
-information that you saw before. To exit, either hit `Control-c` or close the
-window.
+	<center><img src="pictures/installing-zerobrane-12-choose-path.png"
+	style="width: 75%;"/></center>
 
-This is great, but it's a real hassle to have to type that whole directory
-every single time.  Thankfully, there's a way to avoid doing that: add the
-directory to your `PATH`. `PATH` is an environment variable that contains
-directories to look through whenever a command is given. For instance, if you
-type just `lua` into your command prompt now, you will get an error about an
-unrecognized command (as long as you are **not** in the directory where
-`lua.exe` is located). This is because `lua.exe` is not located in any of your
-`PATH` directories. To fix this:
+1. Navigate to the location of the ZeroBrane Studio executable. If you followed
+   the steps above, it should be in `C:\Program Files (x86)\ZeroBrane\` or
+   `C:\Program Files\ZeroBrane\`. Click on the executable, called `zbstudio`.
+   (**Note** that the `C:\` directory is located in either `This PC` or
+   `My Computer` depending on the age of your system)
+1. Once you have selected the executable, select "OK" to continue.
 
-- Open the Control Panel
+	<center><img src="pictures/installing-zerobrane-13-finalize-path.png"
+	style="width: 75%;"/></center>
 
-- Click on the tab "System and Security"
+1. Once the program has been selected, its path should appear, like so. Choose
+   "Next" to continue.
 
-- Click on the heading "System"
+	<center><img src="pictures/installing-zerobrane-14-choose-name.png"
+	style="width: 75%;"/></center>
+
+1. Give a name to the program. The name does not matter, so you can change the
+   name if you want. Just make sure that it makes sense. For instance, you
+   could change the name from `zbstudio` to `ZeroBrane` if you want. When
+   you're done, click "Finish."
+
+	<center><img src="pictures/installing-zerobrane-15-result.png"
+	style="width: 75%;"/> </center>
+
+1. Now you should have a shortcut on your desktop, as you see here. If you
+   double-click this icon, you can launch ZeroBrane studio.
 
 - Click on the side-menu "Advanced System Properties"
 
