@@ -210,19 +210,12 @@ style="width: 75%;"/></center>
    double-click this icon you will launch ZeroBrane studio, bringing you to the
    same screen that you saw before.
 
-- Click on the side-menu "Advanced System Properties"
-
-- Choose "Environment Variables"
-
-- Find the bottom part, labeled "System Variables"
-
-- Click on `Path`, then `Edit`, then `New` and type (or paste) the `"PATH"`
-  directory from earlier.
-
-Now, you should be able to type `lua` on your command prompt and see the same
-screen you saw before.
-
 ### Format of this Guide
+
+
+
+
+
 
 Each sections is composed of two parts: **Instruction** and **Exercises**. In
 the instruction part, commands are entered through Lua's interactive mode. In
