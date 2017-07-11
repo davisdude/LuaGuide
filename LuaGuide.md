@@ -8,7 +8,7 @@ does not need to be hard or complicated.
 
 ### Purpose
 
-The purpose of this guide is to take a person who knows little/nothing about
+The purpose of this guide is to take a person who knows little to nothing about
 programming and to teach them Lua (version 5.2, though all versions numbered
 with a '5' as the first number should be very similar). By the end of the
 tutorial, the reader should be able to read and write Lua with general ease.
@@ -27,21 +27,21 @@ Lua that make it ideal as a first language:
 	  have are not present by default in Lua, you gain a better
 	  understanding of how the concept works by implementing it yourself.
 
-- The main thing to keep in mind when programming is that programming is very
+- The main thing to keep in mind when programming is that computers are very
   literal. You have to tell the computer step-by-step what exactly you want it
-  to and how to do it. How much detail you include depends on the language that
-  you're using. Lua is good because it allows you to program without dealing
+  to do and how to do it. How much detail you include depends on the language
+  you're using: Lua is good because it allows you to program without dealing
   with unnecessary complications for beginners like "memory allocation" and
   things like that. While these are useful for more advanced programmers, for
-  beginners, things like these tend to be complicated and confusing.
+  beginners, these tend to be complicated and confusing.
 
 - Lua is more forgiving than many languages. Many languages feature complex and
   confusing processes, such as "static typing" and "compiling." These can be
-  confusing for first-time users. Because Lua does not feature these concepts,
-  there will be at no point a concept where the reader is told to "Just trust
-  me" (though I will delay explaining some topics fully until later in order to
-  avoid confusion). Throughout this tutorial I will make an effort to explain
-  not only how, but also why things are the way they are.
+  confusing for first-time users. Because Lua does not feature concepts like
+  these, there will be at no point a concept where the reader is told to "Just
+  trust me" (though I will delay explaining some topics fully until later in
+  order to avoid confusion). Throughout this tutorial I will make an effort to
+  explain not only how, but also why things are the way they are.
 
 - Installing Lua is very simple and straightforward.
 
@@ -60,10 +60,10 @@ follow these instructions and understand what is going on:
 1. Butter to taste
 
 Anybody can read this and know that you are making toast, and will be able to
-follow this recipe without difficulty. If you told a robot-chef to do this,
-however, you would run into a few problems. First of all, you never told the
-robot chef to *retrieve* the bread. Additionally, it probably has no idea what
-"as desired" or "to taste" means.
+follow this recipe without difficulty. If you told a very literal robot chef to
+do this, however, you would run into a few problems. First of all, you never
+told the robot chef to retrieve the bread initially. Additionally, it probably
+has no idea what "as desired", "to taste", or similarly vague phrases mean.
 
 When programming, you need to understand that the computer does *not* know what
 you are trying to do, nor does it care. It will do exactly what you tell it to
@@ -81,7 +81,8 @@ entry-level users, I recommend installing ZeroBrane, an **IDE**, or
 **Integrated Development Environment** for Lua. What does "integrated
 development environment" mean? Basically, it makes programming in Lua easier by
 aiding in some common tasks. One big advantage is that it comes installed with
-several versions of Lua and is very easy to install:
+several versions of Lua and is very easy to install. The installation process
+is as follows:
 
 <center><img src="pictures/installing-zerobrane-01-homepage.png" 
 style="width: 75%;"/></center>
@@ -92,14 +93,15 @@ style="width: 75%;"/></center>
 	<center><img src="pictures/installing-zerobrane-02-download-page.png"
 	style="width: 75%;"/></center>
 
-1. Select the option "Take me to the download page this time" for now (unless
+1. Select the option "*Take me to the download page this time*" for now (unless
    you're feeling generous). This program is available for free, but you can
-   find the development now (or at a later date if you desire).
+   fund the development now (or at a later date) if you desire.
 
 	<center><img src="pictures/installing-zerobrane-03-download.png"
 	style="width: 75%;"/></center>
 
-1. Select "Windows 32bit (exe installer)"
+1. Select "*Windows 32bit (exe installer)*" (assuming that you are on Windows,
+   of course!)
 
 
 	<center><img
@@ -107,17 +109,19 @@ style="width: 75%;"/></center>
 	style="width: 75%;"/></center>
 
 1. If you get the option to choose where the installer is downloaded, put it
-   in your "Downloads" directory
-1. Once you've selected the directory, click "Save"
+   in your "*Downloads*" directory
+1. Once you've selected the directory, click "Save" (*You may not see these
+   steps if you have not configured your internet browser to allow you to
+   choose where your downlaods go*)
 
 	<center><img
 	src="pictures/installing-zerobrane-05-determine-architecture.png"
 	style="width: 75%;"/></center>
 
 1. Now you need to figure out if your computer is 32 or 64 bits. If you're not
-   sure, open the File Explorer and go to `C:\`. This will be found either
-   under `This PC` or `My Computer` depending on the age of your computer. If
-   you have a directory called `Program Files (x86)`, as pictured here, you are
+   sure, open the File Explorer and go to "C:\\". This will be found either
+   under "This PC" or "My Computer" depending on the age of your computer. If
+   you have a directory called "Program Files (x86)", as pictured here, you are
    using a 64 bit computer; if not, you're using a 32 bit computer.
 
 	<center><img
@@ -126,7 +130,10 @@ style="width: 75%;"/></center>
 
 1. Now, run the installer. This can be done by navigating to the directory
    where it was downloaded and double-clicking the installer. It should be
-   called something like `ZeroBraneStudioEduPack-1.60-win32.exe`.
+   called something like "*ZeroBraneStudioEduPack-1.60-win32.exe*". If you were
+   not able to choose where the download goes, look in your "*Downloads*"
+   folder or see if your internet browser will display the location where it
+   was downloaded.
 
 	<center><img
 	src="pictures/installing-zerobrane-07-select-install-location.png"
@@ -134,20 +141,21 @@ style="width: 75%;"/></center>
 
 1. When you run the installer, you should be greeted by this pop-up dialog box.
    If you can't read the text, try holding `Ctrl` and moving your mouse wheel.
-   Select the text under the heading `Destination folder` so that it appears
-   blue, like picture above.
+   Select the text under the heading "*Destination folder*" so that it appears
+   blue, like pictured above.
 
 	<center><img
 	src="pictures/installing-zerobrane-08-choose-install-location.png"
 	style="width: 75%;"/></center>
 
 1. Now you need to choose where the program should be installed. For 64 bit
-   systems, install the program in `C:\Program Files (x86)\ZeroBrane` and for
-   32 bit systems, install the program in `C:\Program Files\ZeroBrane`. Note
-   that the location does not matter that much, it's just good practice to put
-   files in these locations so that they are easier to find later on. You will
-   probably be asked to grant administrator privileges, in which case, you
-   should say yes.
+   systems, install the program in "*C:\\Program Files (x86)\\ZeroBrane*" and
+   for 32 bit systems, install the program in "*C:\\Program Files\\ZeroBrane*".
+   Note that the location does not matter that much; it's just good practice to
+   put files in these locations so that they are easier to find later on. While
+   installing, you will probably be asked to grant administrator privileges.
+   Allow the program to run with administrator privileges in order to install
+   successfully.
 
 	<center><img src="pictures/installing-zerobrane-09-welcome-screen.png"
 	style="width: 75%;"/></center>
@@ -161,45 +169,46 @@ style="width: 75%;"/></center>
 1. Next you will want to create a shortcut on your desktop so that it is
    easier to run the program. To do this, close or minimize all open windows
    and right-click on the desktop (**not** one of the icons). Move the mouse
-   down until you see the "New" option.
-1. From the new menu, choose the option "Shortcut" to create the shortcut on
+   down until you see the "*New*" option.
+1. From the new menu, choose the option "*Shortcut*" to create a shortcut on
    your desktop.
 
 	<center><img src="pictures/installing-zerobrane-11-shortcut-dialog.png"
 	style="width: 75%;"/></center>
 
 1. You should be greeted with a prompt that looks something like the above.
-   Select "Browse" to locate the program.
+   Select "*Browse*" to locate the program.
 
 	<center><img src="pictures/installing-zerobrane-12-choose-path.png"
 	style="width: 75%;"/></center>
 
 1. Navigate to the location of the ZeroBrane Studio executable. If you followed
-   the steps above, it should be in `C:\Program Files (x86)\ZeroBrane\` or
-   `C:\Program Files\ZeroBrane\`. Click on the executable, called `zbstudio`.
-   (**Note** that the `C:\` directory is located in either `This PC` or
-   `My Computer` depending on the age of your system)
-1. Once you have selected the executable, select "OK" to continue.
+   the steps above, it should be in "*C:\\Program Files (x86)\\ZeroBrane\\*" or
+   "*C:\\Program Files\\ZeroBrane\\*". Select the executable called `zbstudio`. 
+   (*Note that the "C:\\" directory is located in either "This PC" or
+   "My Computer" depending on the age of your system*)
+1. Once you have selected the executable, select "*OK*" to continue.
 
 	<center><img src="pictures/installing-zerobrane-13-finalize-path.png"
 	style="width: 75%;"/></center>
 
 1. Once the program has been selected, its path should appear, like so. Choose
-   "Next" to continue.
+   "*Next*" to continue.
 
 	<center><img src="pictures/installing-zerobrane-14-choose-name.png"
 	style="width: 75%;"/></center>
 
 1. Give a name to the program. The name does not matter, so you can change the
    name if you want. Just make sure that it makes sense. For instance, you
-   could change the name from `zbstudio` to `ZeroBrane` if you want. When
-   you're done, click "Finish."
+   could change the name from "*zbstudio*" to "*ZeroBrane*" if you wanted. When
+   you're done, click "*Finish*."
 
 	<center><img src="pictures/installing-zerobrane-15-result.png"
 	style="width: 75%;"/> </center>
 
 1. Now you should have a shortcut on your desktop, as you see here. If you
-   double-click this icon, you can launch ZeroBrane studio.
+   double-click this icon you will launch ZeroBrane studio, bringing you to the
+   same screen that you saw before.
 
 - Click on the side-menu "Advanced System Properties"
 
