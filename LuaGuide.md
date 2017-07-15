@@ -784,10 +784,10 @@ phone number. On the other hand, a person's age would probably be stored as a
 
 In this section, you will create a file that should act as your notes. Feel
 free to add comments liberally to document what it is you're doing and why. I
-recommend making a directory on your `Desktop` called "Lua" or something really
-clever like that. Within that directory, make a text document called something
-like `01 Variables and Comments.lua`. Next, open the file with Notepad++ and
-add the following to the file:
+recommend making a directory on your `Desktop` to keep all of your files, and
+naming this file something really clever like
+`01 Variable Names and Comments.lua` and opening it with ZeroBrane. Type the
+following information to the file:
 
 ```lua
 info1 = 'This is a string'
@@ -797,35 +797,8 @@ print( info1 )
 print( info2 )
 ```
 
-Next, bring a command prompt to that location. To do this:
-
-1. open up a command prompt and type `cd \`. This will set the current
-   directory to `C:\`.
-
-1. View the contents of the directory. Type `dir` to view the contents. If you
-   didn't know, the location of your Desktop directory is
-   `C:\Users\USERNAME\Desktop`, where `USERNAME` is obviously (hopefully) your
-   username. So when you type `dir`, you should see `Users` as one of the
-   directories. Type `cd Users` to set the current directory to `C:\Users\`.
-
-1. Type in `dir` again to view the users on your system. `cd` into your
-   username.
-
-1. Type `dir` again to view the directories in `C:\Users\USERNAME\`. You should
-   see a directory called `Desktop`. `cd` into it.
-
-1. Type `dir` to view the contents of your desktop. You should see your `Lua`
-   directory there. `cd` into it.
-
-1. Type `dir` one last time. You should see the file you created.
-
-1. Type `lua "01 Variables and Comments.lua"`. Note that the quotes **are**
-   required. You can also press `tab` whenever you're typing the name and, if
-   the name can be auto-completed, the name will be filled in. For instance, if
-   you type `lua 01` and press `tab`, the name should automatically be
-   completed, with the proper format.
-
-If you've followed the directions, your command prompt should have the output:
+Now run the project. If you've followed the instructions correctly, the console
+should output something like this:
 
 ```
 This is a string
