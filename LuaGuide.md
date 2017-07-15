@@ -212,23 +212,176 @@ style="width: 75%;"/></center>
 
 ### Format of this Guide
 
+This guide is broken into several logical sections. In order to keep yourself
+organized, and make it easier to review your notes, I recommend making a folder
+on your desktop that will contain several folders within it.
 
+#### Creating a Directory for This Guide
 
+Creating a directory is simple and easy to do, as demonstrated below:
 
+<center><img src="pictures/create-directory-01-desktop.png"
+style="width: 75%;"/></center>
 
+1. Close or minimize all open windows and right-click on your desktop (**not**
+   on an icon).
+1. Move your mouse over to the "*New*" option.
+1. Select the option "*Folder*".
 
-Each sections is composed of two parts: **Instruction** and **Exercises**. In
-the instruction part, commands are entered through Lua's interactive mode. In
-the exercises part, a file is written and run through the command line like so:
+	<center><img src="pictures/create-directory-02-name-directory.png"
+	style="width: 75%;"/></center>
 
-```
-lua FILENAME
-```
+1. Now you should have a new folder created on your desktop, as pictured above.
 
-Where `FILENAME` is the name of the Lua file you are running. For instance, if
-your filename is `test.lua`, the command you would enter (while in the
-current directory of the Lua file `test.lua`) would be `lua test.lua`. This
-executes the file and shows its output in the command prompt.
+	<center><img src="pictures/create-directory-03-rename-directory.png"
+	style="width: 75%;"/></center>
+
+1. Give the folder a name that will help you identify it later, like "*Lua*" or
+   something like that.
+
+Now you should be ready to keep all of your files organized in one place.
+
+#### Changing the Interpreter
+
+At the beginning of the guide, I said that the version of Lua that you'll be
+learning is Lua 5.2. While the versions are all fairly similar, some minor
+discrepancies exist from version to version. In order to keep any of these
+discrepancies from occurring, the interpreter will need to be changed in order
+to reflect this. The **interpreter** is what runs the Lua scripts that you
+write. It converts your code into something that the computer can understand
+and use.  Changing the interpreter is very easy to do, as can be seen below:
+
+<center><img src="pictures/change-interpreter.png" style="width: 75%;"/>
+</center>
+
+1. Open up ZeroBrane and move your mouse to the "*Project*" heading.
+1. Move your mouse down to the "*Lua Interpreter*" section.
+1. Select the version "*Lua 5.2*".
+
+Now your program will be run using the Lua 5.2 interpreter.
+
+#### Running the Console
+
+Each sections in this guide is composed of two parts: **Instruction** and
+**Exercises**. In the instruction section, commands are entered through
+ZeroBrane's interactive console. In the exercises section, a file is created
+and run.
+
+The interactive console can be run like so:
+
+<center><img src="pictures/run-console-01-change.png" style="width: 75%;"/>
+</center>
+
+1. At the bottom of ZeroBrane's window, you should see three tabs, as pictured
+   above.
+
+	<center><img src="pictures/run-console-02-output.png"
+	style="width: 75%;"/></center>
+
+1. Move your mouse over to the one labeled "Local console" and select it. You
+   should now see the above text telling you that you are working with the
+   interactive Lua interpreter, also known as the console.
+
+#### Creating a New File
+
+In the exercises section, the entire file is executed all at once. You can
+create these files using ZeroBrane, as demonstrated below:
+
+<center><img src="pictures/create-file-01-file-new.png" style="width: 75%;"/>
+</center>
+
+1. At the top of the ZeroBrane window, move your mouse over to "*File*".
+1. Select the option "*New*".
+
+	<center><img src="pictures/create-file-02-untitled.png"
+	style="width: 75%;"/></center>
+
+1. You should now have a new tab open up next to the "*Welcome*" tab, like so.
+
+	<center><img src="pictures/create-file-03-file-save.png"
+	style="width: 75%;"/></center>
+
+1. With the file you want to save selected, go to the "*File*" heading.
+
+1. Select the "*Save*" option. The first time that you save the file, you
+   should get a pop-up dialog asking you where you would like to save it, as
+   shown below.
+
+	<center><img src="pictures/create-file-04-file-dialog.png"
+	style="width: 75%;"/></center>
+
+1. You will want to keep all of your files located in logical places so that
+   they are easier to find, such as the folder you made earlier. For this
+   tutorial, I recommend saving all of your files in a folder on your desktop.
+   To do this, select the "*Desktop*" option on the side of the file explorer,
+   as pictured above. If you do not see this option, you will have to go to
+   "*C:\\Users\\YOURNAME\\Desktop\\*", where *YOURNAME* is your username on
+   your computer.
+
+	<center><img src="pictures/create-file-05-file-dialog-desktop.png"
+	style="width: 75%;"/></center>
+
+1. To select the folder that you created earlier, either double-click the
+   folder or select the folder then click "*Open*".
+
+	<center><img src="pictures/create-file-06-file-dialog-name.png"
+	style="width: 75%;"/></center>
+
+1. Give the file a name by clicking in the box labeled "*File name:*" and
+   giving it a name that you desire, then clicking "*Save*". Here, I have named
+   my program "*test.lua*".
+
+Once you have created the file, it can be run using the IDE, as demonstrated
+below.
+
+#### Running the File
+
+In the exercises code sections, files are run. Running a file is simple and
+will comprise the majority of what you do when you're programming.
+
+<center><img src="pictures/run-project-01-run-dialog.png" style="width: 75%;"/>
+</center>
+
+1. Create a new blank file, as demonstrated in the section
+   [Creating a New File](#creating-a-new-file).
+1. Move your mouse over to the "*Project*" heading
+1. Select the first option, "*Run*".
+
+	<center><img src="pictures/run-project-02-output.png"
+	style="width: 75%;"/></center>
+
+1. You should see the text below when you run a file. Each line contains
+   information about your program:
+
+	1. The first line tells you initial settings and information:
+
+		1. The location of the Lua interpeter that you are using
+		   (`"C:\Program Files (x86)\ZeroBrane\bin\lua52.exe"`).
+
+		1. The `-e io.stdout:setvbuf('no')"` is a command that is
+		   executed before the code is run. Basically, it makes viewing
+		   the output easier.
+
+		1. The location of the file being run
+		   (`"C:\Users\User\Desktop\Lua\test.lua"`).
+
+	1. The second line tells you information about the "*project*", which
+	   is how ZeroBrane groups Lua files:
+
+		1. `lua52.exe` is the name of the interpreter. This shows that
+		   it was started and its directory.
+
+		1. The directory
+		   `"C:\Program Files (x86)\ZeroBrane\myprograms"` refers to
+		   the *directory* of the Lua file. The directory allows you to
+		   use multiple files together at once.
+
+	1. The third line tells you about the output of the project:
+
+		1. It ran in `0.05` seconds.
+		1. Its **PID**, or Project Identification Number, is 8600. This
+		   number is used by ZeroBrane to keep track of your projects.
+		   Your PID will likely be different.
 
 
 
