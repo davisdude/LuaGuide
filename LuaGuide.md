@@ -936,7 +936,7 @@ includes a construct that is ideal for this type of situation: the `for-loop`.
 
 Instead of writing everything multiple times, you can use what are called
 **numeric for-loops**. The name might be scary, but all it does is do something
-a certain amount of times.  This is the basic structure of this loop is (you
+a certain number of times.  This is the basic structure of this loop is (you
 should **not** run this):
 
 ```lua
@@ -975,8 +975,8 @@ for index = 1, 5 do
 end
 ```
 
-With most cases, you will want to increment by one, but you can increment by
-any real number. For instance, if you wanted even numbers, you could do:
+In most cases, you will want to increment by one, but you can increment by any
+real number. For instance, if you wanted even numbers, you could do:
 
 ```lua
 for i = 2, 10, 2 do
@@ -1006,14 +1006,15 @@ for index = 1, times do
 end
 ```
 
-This is **much** better than typing that and changing it all the time.
+This is **much** better than typing all of the original code out and changing
+it all the time.
 
 #### Using the Stop and Increment Controllers
 
 You may remember the parts of the for-loop labeled `STOP` and `INCREMENT` from
 before. These two variables work in conjunction with each-other to control how
-much the for-loop loops. The loop will continue until the index will surpass
-`STOP`. Here are some examples of how different loops work:
+many times the for-loop loops. The loop will continue until the index will have
+surpassed `STOP`. Here are some examples of how different loops work:
 
 ```lua
 for i = 1, 8, 2 do
@@ -1089,7 +1090,7 @@ Is 4 < 5? Yes, so:
 Is 5 < 5? No, so stop.
 ```
 
-Now it is obvious why 5 is not output: The loop only executes while the given
+Now it is obvious why 5 is not output: the loop only executes while the given
 condition is `true`, then quits.
 
 Note that it is **essential** to assign the variable *before* the while-loop.
@@ -1104,10 +1105,10 @@ while index < 10 do
 end
 ```
 
-Because you have not assigned `index` yet, you will get the error "Attempt to
-compare a number with [nil](#nil)." This is because you're essentially asking
-the interpreter to compare `nil` with `5`. Because `nil` has no value, you
-cannot compare it with a number, hence causing the error above.
+Because you have not assigned `index` a value yet, you will get the error
+"Attempt to compare a number with [nil](#nil)." This is because you're
+essentially asking the interpreter to compare `nil` with `5`. Because `nil` has
+no value, you cannot compare it with a number, hence causing the error above.
 
 As long as the statement between the `while` and `do` is `true`, the loop will
 continue to repeat. The general structure of a while-loop is:
@@ -1139,9 +1140,9 @@ Notice that this will continue executing until you break it using `Ctrl+c`.
 
 #### Break
 
-There is actually a command that can also be used to abort the execution of a
-loop called `break`. This is used if you want to stop the execution of a loop
-for any reason. Take the following example:
+There is also a command that can also be used to abort the execution of a loop
+called `break`. This is used if you want to stop the execution of a loop for
+any reason. Take the following example:
 
 ```lua
 index = 1
@@ -1150,14 +1151,15 @@ while index < 5 do
 	print( index )
 	index = index + 1
 	break
+	print( 'You should not see this!' )
 end
+-- 1
 
 print( index ) -- 2
 ```
 
-Note that the break command **must** be before the `end` command, otherwise you
-will get an error. This is kind of complicated, but you need to remember that
-`break` must be at the end of a block of code.
+Note that the code after the `break` command is not executed. This is because
+that part is completely ignored because of the `break` command.
 
 The `break` command ended the loop before the execution completed. This may not
 seem useful now, but it will become more useful later when you have learned
@@ -1189,11 +1191,11 @@ print( i ) -- 5
 ```
 
 You may be wondering: What is the advantage of using a `while` loop versus a
-`repeat` loop? Personal preference is certainly one preference, but there is
-one other advantage: a `repeat` loop will **always** execute *at least* one
-time, while `while` loops may not execute it at all. This may seem odd at
-first, but it makes sense: If the initial condition of a `while` loop is
-`false`, the loop never executes. Test the following loops out:
+`repeat` loop? Personal preference is certainly one reason, but there is one
+other advantage: a `repeat` loop will **always** execute *at least* one time,
+while `while` loops may not execute at all. This may seem odd at first, but it
+makes sense: If the initial condition of a `while` loop is `false`, the loop
+never executes. Test the following loops out:
 
 ```lua
 i = 5
@@ -1367,26 +1369,20 @@ if ( BOOLEAN ) then
 end
 ```
 
-If `BOOLEAN` is `true`, the code executes. Otherwise, nothing happens. So in
-the example above, you might do something like this:
+For instance, you could display if a person's age is over 18:
 
 ```lua
-numberOfTimes = 1
-booleanThatWontChange = true
+age = 21
 
-while booleanThatWontChange do
-	numberOfTimes = numberOfTimes + 1
-	print( numberOfTimes )
-	if numberOfTimes > 99 then
-		print( 'That loop went on way too long!' )
-		break
-	end
+if age > 18 then
+	print( 'This person is over 18' )
 end
+-- This person is over 18
 ```
 
 You may have noticed by now there are several different ways to compare
-numbers. You've seen some of them, but there are still several more, which will
-be discussed below.
+numbers. You've seen some of them, and may be familiar with some, but there are
+still several more which will be discussed below.
 
 ### Comparisons
 
@@ -1432,7 +1428,8 @@ if 3 ~= 2 then
 end
 ```
 
-Note that all of these commands work **only** for numbers, except for `==`:
+Note that all of these commands work **only** for numbers, except for `==` and
+`~=`, as demonstrated below:
 
 ```lua
 str1 = 'This is a test'
@@ -1449,6 +1446,8 @@ if bool1 == bool2 then
 	print( 'These booleans are equal' )
 end
 ```
+
+#### The Length Operator
 
 There is also another operator that *only* can be used with strings: `#`, the
 **length** operator.  This gives you the length of a string, in characters. For
@@ -1747,6 +1746,27 @@ end
 Note that, because `SuperCool` is not defined, it evaluates to `nil`, causing
 the statement to be `false`.
 
+### Using If-Statements with Break
+
+If you recall from the previous section, you learned about the `break` command.
+Recall also that, with `if-then` statements, if `BOOLEAN` is `true`, the code
+executes. Otherwise, nothing happens. So if you wanted to `break` a
+`while-loop` after 100 executions, you would do something like this:
+
+```lua
+numberOfTimes = 1
+booleanThatWontChange = true
+
+while booleanThatWontChange do
+	numberOfTimes = numberOfTimes + 1
+	print( numberOfTimes )
+	if numberOfTimes > 99 then
+		print( 'That loop went on way too long!' )
+		break
+	end
+end
+```
+
 ### Exercises
 
 Create a file called `03 Conditionals.lua`. Within it, create an if-elseif-else
@@ -1852,5 +1872,3 @@ else
 	end
 end
 ```
-
-
