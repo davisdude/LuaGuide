@@ -15,6 +15,7 @@ You may be wondering: "Why should I learn Lua?" There are several features of Lu
 - Lua is a small language. This means that it has very few built-in commands.  While this may not seem like an advantage at first, there are a few reasons why this is beneficial:
 
 	- It makes the language easier to learn.
+
 	- It reinforces concepts. Because many aspects that other languages have are not present by default in Lua, you gain a better understanding of how the concept works by implementing it yourself.
 
 - The main thing to keep in mind when programming is that computers are very literal. You have to tell the computer step-by-step what exactly you want it to do and how to do it. How much detail you include depends on the language you're using: Lua is good because it allows you to program without dealing with unnecessary complications for beginners like "memory allocation" and things like that. While these are useful for more advanced programmers, for beginners, these tend to be complicated and confusing.
@@ -28,8 +29,11 @@ You may be wondering: "Why should I learn Lua?" There are several features of Lu
 Earlier, I mentioned that, when programming, you need to tell the computer what to do with step-by-step instructions. This can be difficult for people to get used to at first; they expect the computer to "know what they mean," which rarely happens. Think of a computer as a very literal person who does **exactly** what you tell them to. For instance, most people would be able to follow these instructions and understand what is going on:
 
 1. Set the toaster to the desired setting
+
 1. Put in bread as desired
+
 1. Retrieve the toast when it is ready
+
 1. Butter to taste
 
 Anybody can read this and know that you are making toast, and will be able to follow this recipe without difficulty. If you told a very literal robot chef to do this, however, you would run into a few problems. First of all, you never told the robot chef to retrieve the bread initially. Additionally, it probably has no idea what "as desired", "to taste", or similarly vague phrases mean.
@@ -44,6 +48,7 @@ In order to edit code, you need something called a **text editor**. An editor is
 style="width: 75%;"/></center>
 
 1. Go to [studio.zerobrane.com](https://studio.zerobrane.com)
+
 1. Select the "Download" tab on the right side of the page
 
 	<center><img src="pictures/installing-zerobrane-02-download-page.png" style="width: 75%;"/></center>
@@ -58,6 +63,7 @@ style="width: 75%;"/></center>
 	<center><img src="pictures/installing-zerobrane-04-choose-installer-location.png" style="width: 75%;"/></center>
 
 1. If you get the option to choose where the installer is downloaded, put it in your "*Downloads*" directory
+
 1. Once you've selected the directory, click "Save" (*You may not see these steps if you have not configured your internet browser to allow you to choose where your downlaods go*)
 
 	<center><img src="pictures/installing-zerobrane-05-determine-architecture.png" style="width: 75%;"/></center>
@@ -83,6 +89,7 @@ style="width: 75%;"/></center>
 	<center><img src="pictures/installing-zerobrane-10-create-shortcut.png" style="width: 75%;"/></center>
 
 1. Next you will want to create a shortcut on your desktop so that it is easier to run the program. To do this, close or minimize all open windows and right-click on the desktop (**not** one of the icons). Move the mouse down until you see the "*New*" option.
+
 1. From the new menu, choose the option "*Shortcut*" to create a shortcut on your desktop.
 
 	<center><img src="pictures/installing-zerobrane-11-shortcut-dialog.png" style="width: 75%;"/></center>
@@ -92,6 +99,7 @@ style="width: 75%;"/></center>
 	<center><img src="pictures/installing-zerobrane-12-choose-path.png" style="width: 75%;"/></center>
 
 1. Navigate to the location of the ZeroBrane Studio executable. If you followed the steps above, it should be in "*C:\\Program Files (x86)\\ZeroBrane\\*" or "*C:\\Program Files\\ZeroBrane\\*". Select the executable called `zbstudio`.  (*Note that the "C:\\" directory is located in either "This PC" or "My Computer" depending on the age of your system*)
+
 1. Once you have selected the executable, select "*OK*" to continue.
 
 	<center><img src="pictures/installing-zerobrane-13-finalize-path.png" style="width: 75%;"/></center>
@@ -117,7 +125,9 @@ Creating a directory is simple and easy to do, as demonstrated below:
 <center><img src="pictures/create-directory-01-desktop.png" style="width: 75%;"/></center>
 
 1. Close or minimize all open windows and right-click on your desktop (**not** on an icon).
+
 1. Move your mouse over to the "*New*" option.
+
 1. Select the option "*Folder*".
 
 	<center><img src="pictures/create-directory-02-name-directory.png" style="width: 75%;"/></center>
@@ -137,7 +147,9 @@ At the beginning of the guide, I said that the version of Lua that you'll be lea
 <center><img src="pictures/change-interpreter.png" style="width: 75%;"/> </center>
 
 1. Open up ZeroBrane and move your mouse to the "*Project*" heading.
+
 1. Move your mouse down to the "*Lua Interpreter*" section.
+
 1. Select the version "*Lua 5.2*".
 
 Now your program will be run using the Lua 5.2 interpreter.
@@ -196,7 +208,9 @@ In the exercises code sections, files are run. Running a file is simple and will
 <center><img src="pictures/run-project-01-run-dialog.png" style="width: 75%;"/> </center>
 
 1. Create a new blank file, as demonstrated in the section [Creating a New File](#creating-a-new-file).
+
 1. Move your mouse over to the "*Project*" heading
+
 1. Select the first option, "*Run*".
 
 	<center><img src="pictures/run-project-02-output.png" style="width: 75%;"/></center>
@@ -504,6 +518,7 @@ circumference = 2 * 3.14 * radius
 In summary, variables:
 
 - Make your code easier to read
+
 - Make changes easier and faster
 
 #### Strings vs Numbers
@@ -1351,10 +1366,13 @@ end
 Create a file called `03 Conditionals.lua`. Within it, create an if-elseif-else statement that determines if a person can join your super secret club. The criterion are:
 
 - If they're a guy:
+
 	- They have to be over 21
+
 	- Their name cannot be over 7 letters long
 
 - If they're a girl:
+
 	- They have to be over 18 and under 30
 
 You need specific reasoning as to why they were denied admission to the club as well.
