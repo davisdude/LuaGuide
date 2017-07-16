@@ -24,6 +24,7 @@ commands.  While this may not seem like an advantage at first, there
 are a few reasons why this is beneficial:
 
 	- It makes the language easier to learn.
+
 	- It reinforces concepts. Because many aspects that other
 	languages have are not present by default in Lua, you gain a
 	better understanding of how the concept works by implementing
@@ -59,8 +60,11 @@ people would be able to follow these instructions and understand what
 is going on:
 
 1. Set the toaster to the desired setting
+
 1. Put in bread as desired
+
 1. Retrieve the toast when it is ready
+
 1. Butter to taste
 
 Anybody can read this and know that you are making toast, and will
@@ -94,6 +98,7 @@ is as follows:
 style="width: 75%;"/></center>
 
 1. Go to [studio.zerobrane.com](https://studio.zerobrane.com)
+
 1. Select the "Download" tab on the right side of the page
 
 	<center><img
@@ -117,6 +122,7 @@ Windows, of course!)
 
 1. If you get the option to choose where the installer is downloaded,
 put it in your "*Downloads*" directory
+
 1. Once you've selected the directory, click "Save" (*You may not see
 these steps if you have not configured your internet browser to allow
 you to choose where your downlaods go*)
@@ -180,6 +186,7 @@ that looks like this. Congratulations! Your installation is complete.
 is easier to run the program. To do this, close or minimize all open
 windows and right-click on the desktop (**not** one of the icons). Move
 the mouse down until you see the "*New*" option.
+
 1. From the new menu, choose the option "*Shortcut*" to create a shortcut
 on your desktop.
 
@@ -199,6 +206,7 @@ you followed the steps above, it should be in "*C:\\Program Files
 (x86)\\ZeroBrane\\*" or "*C:\\Program Files\\ZeroBrane\\*". Select the
 executable called `zbstudio`.  (*Note that the "C:\\" directory is located
 in either "This PC" or "My Computer" depending on the age of your system*)
+
 1. Once you have selected the executable, select "*OK*" to continue.
 
 	<center><img
@@ -240,7 +248,9 @@ Creating a directory is simple and easy to do, as demonstrated below:
 
 1. Close or minimize all open windows and right-click on your desktop
 (**not** on an icon).
+
 1. Move your mouse over to the "*New*" option.
+
 1. Select the option "*Folder*".
 
 	<center><img src="pictures/create-directory-02-name-directory.png"
@@ -273,7 +283,9 @@ easy to do, as can be seen below:
 </center>
 
 1. Open up ZeroBrane and move your mouse to the "*Project*" heading.
+
 1. Move your mouse down to the "*Lua Interpreter*" section.
+
 1. Select the version "*Lua 5.2*".
 
 Now your program will be run using the Lua 5.2 interpreter.
@@ -364,7 +376,9 @@ and will comprise the majority of what you do when you're programming.
 
 1. Create a new blank file, as demonstrated in the section [Creating a
 New File](#creating-a-new-file).
+
 1. Move your mouse over to the "*Project*" heading
+
 1. Select the first option, "*Run*".
 
 	<center><img src="pictures/run-project-02-output.png"
@@ -802,6 +816,7 @@ and frustration.
 In summary, variables:
 
 - Make your code easier to read
+
 - Make changes easier and faster
 
 #### Strings vs Numbers
@@ -1437,10 +1452,15 @@ there are still several more which will be discussed below.
 In math, there are several operators that you may be familiar with:
 
 - Equal to
+
 - Not equal to
+
 - Greater than
+
 - Less than
+
 - Greater than or equal to
+
 - Less than or equal to
 
 These can all be expressed in Lua as follows:
@@ -1831,10 +1851,13 @@ if-elseif-else statement that determines if a person can join your super
 secret club. The criterion are:
 
 - If they're a guy:
+
 	- They have to be over 21
+
 	- Their name cannot be over 7 letters long
 
 - If they're a girl:
+
 	- They have to be over 18 and under 30
 
 You need specific reasoning as to why they were denied admission to the

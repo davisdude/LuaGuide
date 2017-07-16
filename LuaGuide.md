@@ -1025,10 +1025,15 @@ You may have noticed by now there are several different ways to compare numbers.
 In math, there are several operators that you may be familiar with:
 
 - Equal to
+
 - Not equal to
+
 - Greater than
+
 - Less than
+
 - Greater than or equal to
+
 - Less than or equal to
 
 These can all be expressed in Lua as follows:
