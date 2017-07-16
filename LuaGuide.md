@@ -2,87 +2,43 @@
 
 ## Introduction
 
-Learning how to program is a very rewarding experience. Whether you're learning
-for school, your career, or just for fun, programming is a useful skill and
-does not need to be hard or complicated.
+Learning how to program is a very rewarding experience. Whether you're learning for school, your career, or just for fun, programming is a useful skill and does not need to be hard or complicated.
 
 ### Purpose
 
-The purpose of this guide is to take a person who knows little to nothing about
-programming and to teach them Lua (version 5.2, though all versions numbered
-with a '5' as the first number should be very similar). By the end of the
-tutorial, the reader should be able to read and write Lua with general ease.
+The purpose of this guide is to take a person who knows little to nothing about programming and to teach them Lua (version 5.2, though all versions numbered with a '5' as the first number should be very similar). By the end of the tutorial, the reader should be able to read and write Lua with general ease.
 
 ### Why Lua?
 
-You may be wondering: "Why should I learn Lua?" There are several features of
-Lua that make it ideal as a first language:
+You may be wondering: "Why should I learn Lua?" There are several features of Lua that make it ideal as a first language:
 
-- Lua is a small language. This means that it has very few built-in commands.
-  While this may not seem like an advantage at first, there are a few reasons
-  why this is beneficial:
+- Lua is a small language. This means that it has very few built-in commands.  While this may not seem like an advantage at first, there are a few reasons why this is beneficial:
 
 	- It makes the language easier to learn.
-	- It reinforces concepts. Because many aspects that other languages
-	  have are not present by default in Lua, you gain a better
-	  understanding of how the concept works by implementing it yourself.
+	- It reinforces concepts. Because many aspects that other languages have are not present by default in Lua, you gain a better understanding of how the concept works by implementing it yourself.
 
-- The main thing to keep in mind when programming is that computers are very
-  literal. You have to tell the computer step-by-step what exactly you want it
-  to do and how to do it. How much detail you include depends on the language
-  you're using: Lua is good because it allows you to program without dealing
-  with unnecessary complications for beginners like "memory allocation" and
-  things like that. While these are useful for more advanced programmers, for
-  beginners, these tend to be complicated and confusing.
+- The main thing to keep in mind when programming is that computers are very literal. You have to tell the computer step-by-step what exactly you want it to do and how to do it. How much detail you include depends on the language you're using: Lua is good because it allows you to program without dealing with unnecessary complications for beginners like "memory allocation" and things like that. While these are useful for more advanced programmers, for beginners, these tend to be complicated and confusing.
 
-- Lua is more forgiving than many languages. Many languages feature complex and
-  confusing processes, such as "static typing" and "compiling." These can be
-  confusing for first-time users. Because Lua does not feature concepts like
-  these, there will be at no point a concept where the reader is told to "Just
-  trust me" (though I will delay explaining some topics fully until later in
-  order to avoid confusion). Throughout this tutorial I will make an effort to
-  explain not only how, but also why things are the way they are.
+- Lua is more forgiving than many languages. Many languages feature complex and confusing processes, such as "static typing" and "compiling." These can be confusing for first-time users. Because Lua does not feature concepts like these, there will be at no point a concept where the reader is told to "Just trust me" (though I will delay explaining some topics fully until later in order to avoid confusion). Throughout this tutorial I will make an effort to explain not only how, but also why things are the way they are.
 
 - Installing Lua is very simple and straightforward.
 
 ### Thinking Like a Computer
 
-Earlier, I mentioned that, when programming, you need to tell the computer what
-to do with step-by-step instructions. This can be difficult for people to get
-used to at first; they expect the computer to "know what they mean," which
-rarely happens. Think of a computer as a very literal person who does
-**exactly** what you tell them to. For instance, most people would be able to
-follow these instructions and understand what is going on:
+Earlier, I mentioned that, when programming, you need to tell the computer what to do with step-by-step instructions. This can be difficult for people to get used to at first; they expect the computer to "know what they mean," which rarely happens. Think of a computer as a very literal person who does **exactly** what you tell them to. For instance, most people would be able to follow these instructions and understand what is going on:
 
 1. Set the toaster to the desired setting
 1. Put in bread as desired
 1. Retrieve the toast when it is ready
 1. Butter to taste
 
-Anybody can read this and know that you are making toast, and will be able to
-follow this recipe without difficulty. If you told a very literal robot chef to
-do this, however, you would run into a few problems. First of all, you never
-told the robot chef to retrieve the bread initially. Additionally, it probably
-has no idea what "as desired", "to taste", or similarly vague phrases mean.
+Anybody can read this and know that you are making toast, and will be able to follow this recipe without difficulty. If you told a very literal robot chef to do this, however, you would run into a few problems. First of all, you never told the robot chef to retrieve the bread initially. Additionally, it probably has no idea what "as desired", "to taste", or similarly vague phrases mean.
 
-When programming, you need to understand that the computer does *not* know what
-you are trying to do, nor does it care. It will do exactly what you tell it to
-do; nothing more, nothing less.
+When programming, you need to understand that the computer does *not* know what you are trying to do, nor does it care. It will do exactly what you tell it to do; nothing more, nothing less.
 
 ### Installing and Setting up an Editor
 
-In order to edit code, you need something called a **text editor**. An editor
-is what you use to write your code. Editors can be as simple or complex as you
-would like them to be. You can even use Notepad to edit your Lua files, though
-I would **strongly** advise against this for several reasons. Primarily, it
-lacks syntax highlighting, which makes your code easier to read. It also lacks
-an advanced undo structure, which severely limits your ease-of-use. For most
-entry-level users, I recommend installing ZeroBrane, an **IDE**, or
-**Integrated Development Environment** for Lua. What does "integrated
-development environment" mean? Basically, it makes programming in Lua easier by
-aiding in some common tasks. One big advantage is that it comes installed with
-several versions of Lua and is very easy to install. The installation process
-is as follows:
+In order to edit code, you need something called a **text editor**. An editor is what you use to write your code. Editors can be as simple or complex as you would like them to be. You can even use Notepad to edit your Lua files, though I would **strongly** advise against this for several reasons. Primarily, it lacks syntax highlighting, which makes your code easier to read. It also lacks an advanced undo structure, which severely limits your ease-of-use. For most entry-level users, I recommend installing ZeroBrane, an **IDE**, or **Integrated Development Environment** for Lua. What does "integrated development environment" mean? Basically, it makes programming in Lua easier by aiding in some common tasks. One big advantage is that it comes installed with several versions of Lua and is very easy to install. The installation process is as follows:
 
 <center><img src="pictures/installing-zerobrane-01-homepage.png" 
 style="width: 75%;"/></center>
@@ -90,169 +46,95 @@ style="width: 75%;"/></center>
 1. Go to [studio.zerobrane.com](https://studio.zerobrane.com)
 1. Select the "Download" tab on the right side of the page
 
-	<center><img src="pictures/installing-zerobrane-02-download-page.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-02-download-page.png" style="width: 75%;"/></center>
 
-1. Select the option "*Take me to the download page this time*" for now (unless
-   you're feeling generous). This program is available for free, but you can
-   fund the development now (or at a later date) if you desire.
+1. Select the option "*Take me to the download page this time*" for now (unless you're feeling generous). This program is available for free, but you can fund the development now (or at a later date) if you desire.
 
-	<center><img src="pictures/installing-zerobrane-03-download.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-03-download.png" style="width: 75%;"/></center>
 
-1. Select "*Windows 32bit (exe installer)*" (assuming that you are on Windows,
-   of course!)
+1. Select "*Windows 32bit (exe installer)*" (assuming that you are on Windows, of course!)
 
 
-	<center><img
-	src="pictures/installing-zerobrane-04-choose-installer-location.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-04-choose-installer-location.png" style="width: 75%;"/></center>
 
-1. If you get the option to choose where the installer is downloaded, put it
-   in your "*Downloads*" directory
-1. Once you've selected the directory, click "Save" (*You may not see these
-   steps if you have not configured your internet browser to allow you to
-   choose where your downlaods go*)
+1. If you get the option to choose where the installer is downloaded, put it in your "*Downloads*" directory
+1. Once you've selected the directory, click "Save" (*You may not see these steps if you have not configured your internet browser to allow you to choose where your downlaods go*)
 
-	<center><img
-	src="pictures/installing-zerobrane-05-determine-architecture.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-05-determine-architecture.png" style="width: 75%;"/></center>
 
-1. Now you need to figure out if your computer is 32 or 64 bits. If you're not
-   sure, open the File Explorer and go to "C:\\". This will be found either
-   under "This PC" or "My Computer" depending on the age of your computer. If
-   you have a directory called "Program Files (x86)", as pictured here, you are
-   using a 64 bit computer; if not, you're using a 32 bit computer.
+1. Now you need to figure out if your computer is 32 or 64 bits. If you're not sure, open the File Explorer and go to "C:\\". This will be found either under "This PC" or "My Computer" depending on the age of your computer. If you have a directory called "Program Files (x86)", as pictured here, you are using a 64 bit computer; if not, you're using a 32 bit computer.
 
-	<center><img
-	src="pictures/installing-zerobrane-06-run-installer.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-06-run-installer.png" style="width: 75%;"/></center>
 
-1. Now, run the installer. This can be done by navigating to the directory
-   where it was downloaded and double-clicking the installer. It should be
-   called something like "*ZeroBraneStudioEduPack-1.60-win32.exe*". If you were
-   not able to choose where the download goes, look in your "*Downloads*"
-   folder or see if your internet browser will display the location where it
-   was downloaded.
+1. Now, run the installer. This can be done by navigating to the directory where it was downloaded and double-clicking the installer. It should be called something like "*ZeroBraneStudioEduPack-1.60-win32.exe*". If you were not able to choose where the download goes, look in your "*Downloads*" folder or see if your internet browser will display the location where it was downloaded.
 
-	<center><img
-	src="pictures/installing-zerobrane-07-select-install-location.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-07-select-install-location.png" style="width: 75%;"/></center>
 
-1. When you run the installer, you should be greeted by this pop-up dialog box.
-   If you can't read the text, try holding `Ctrl` and moving your mouse wheel.
-   Select the text under the heading "*Destination folder*" so that it appears
-   blue, like pictured above.
+1. When you run the installer, you should be greeted by this pop-up dialog box.  If you can't read the text, try holding `Ctrl` and moving your mouse wheel.  Select the text under the heading "*Destination folder*" so that it appears blue, like pictured above.
 
-	<center><img
-	src="pictures/installing-zerobrane-08-choose-install-location.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-08-choose-install-location.png" style="width: 75%;"/></center>
 
-1. Now you need to choose where the program should be installed. For 64 bit
-   systems, install the program in "*C:\\Program Files (x86)\\ZeroBrane*" and
-   for 32 bit systems, install the program in "*C:\\Program Files\\ZeroBrane*".
-   Note that the location does not matter that much; it's just good practice to
-   put files in these locations so that they are easier to find later on. While
-   installing, you will probably be asked to grant administrator privileges.
-   Allow the program to run with administrator privileges in order to install
-   successfully.
+1. Now you need to choose where the program should be installed. For 64 bit systems, install the program in "*C:\\Program Files (x86)\\ZeroBrane*" and for 32 bit systems, install the program in "*C:\\Program Files\\ZeroBrane*".  Note that the location does not matter that much; it's just good practice to put files in these locations so that they are easier to find later on. While installing, you will probably be asked to grant administrator privileges.  Allow the program to run with administrator privileges in order to install successfully.
 
-	<center><img src="pictures/installing-zerobrane-09-welcome-screen.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-09-welcome-screen.png" style="width: 75%;"/></center>
 
-1. Once the installation is completed, you should be greeted with a screen that
-   looks like this. Congratulations! Your installation is complete.
+1. Once the installation is completed, you should be greeted with a screen that looks like this. Congratulations! Your installation is complete.
 
-	<center><img src="pictures/installing-zerobrane-10-create-shortcut.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-10-create-shortcut.png" style="width: 75%;"/></center>
 
-1. Next you will want to create a shortcut on your desktop so that it is
-   easier to run the program. To do this, close or minimize all open windows
-   and right-click on the desktop (**not** one of the icons). Move the mouse
-   down until you see the "*New*" option.
-1. From the new menu, choose the option "*Shortcut*" to create a shortcut on
-   your desktop.
+1. Next you will want to create a shortcut on your desktop so that it is easier to run the program. To do this, close or minimize all open windows and right-click on the desktop (**not** one of the icons). Move the mouse down until you see the "*New*" option.
+1. From the new menu, choose the option "*Shortcut*" to create a shortcut on your desktop.
 
-	<center><img src="pictures/installing-zerobrane-11-shortcut-dialog.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-11-shortcut-dialog.png" style="width: 75%;"/></center>
 
-1. You should be greeted with a prompt that looks something like the above.
-   Select "*Browse*" to locate the program.
+1. You should be greeted with a prompt that looks something like the above.  Select "*Browse*" to locate the program.
 
-	<center><img src="pictures/installing-zerobrane-12-choose-path.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-12-choose-path.png" style="width: 75%;"/></center>
 
-1. Navigate to the location of the ZeroBrane Studio executable. If you followed
-   the steps above, it should be in "*C:\\Program Files (x86)\\ZeroBrane\\*" or
-   "*C:\\Program Files\\ZeroBrane\\*". Select the executable called `zbstudio`. 
-   (*Note that the "C:\\" directory is located in either "This PC" or
-   "My Computer" depending on the age of your system*)
+1. Navigate to the location of the ZeroBrane Studio executable. If you followed the steps above, it should be in "*C:\\Program Files (x86)\\ZeroBrane\\*" or "*C:\\Program Files\\ZeroBrane\\*". Select the executable called `zbstudio`.  (*Note that the "C:\\" directory is located in either "This PC" or "My Computer" depending on the age of your system*)
 1. Once you have selected the executable, select "*OK*" to continue.
 
-	<center><img src="pictures/installing-zerobrane-13-finalize-path.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-13-finalize-path.png" style="width: 75%;"/></center>
 
-1. Once the program has been selected, its path should appear, like so. Choose
-   "*Next*" to continue.
+1. Once the program has been selected, its path should appear, like so. Choose "*Next*" to continue.
 
-	<center><img src="pictures/installing-zerobrane-14-choose-name.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/installing-zerobrane-14-choose-name.png" style="width: 75%;"/></center>
 
-1. Give a name to the program. The name does not matter, so you can change the
-   name if you want. Just make sure that it makes sense. For instance, you
-   could change the name from "*zbstudio*" to "*ZeroBrane*" if you wanted. When
-   you're done, click "*Finish*."
+1. Give a name to the program. The name does not matter, so you can change the name if you want. Just make sure that it makes sense. For instance, you could change the name from "*zbstudio*" to "*ZeroBrane*" if you wanted. When you're done, click "*Finish*."
 
-	<center><img src="pictures/installing-zerobrane-15-result.png"
-	style="width: 75%;"/> </center>
+	<center><img src="pictures/installing-zerobrane-15-result.png" style="width: 75%;"/> </center>
 
-1. Now you should have a shortcut on your desktop, as you see here. If you
-   double-click this icon you will launch ZeroBrane studio, bringing you to the
-   same screen that you saw before.
+1. Now you should have a shortcut on your desktop, as you see here. If you double-click this icon you will launch ZeroBrane studio, bringing you to the same screen that you saw before.
 
 ### Format of this Guide
 
-This guide is broken into several logical sections. In order to keep yourself
-organized, and make it easier to review your notes, I recommend making a folder
-on your desktop that will contain several folders within it.
+This guide is broken into several logical sections. In order to keep yourself organized, and make it easier to review your notes, I recommend making a folder on your desktop that will contain several folders within it.
 
 #### Creating a Directory for This Guide
 
 Creating a directory is simple and easy to do, as demonstrated below:
 
-<center><img src="pictures/create-directory-01-desktop.png"
-style="width: 75%;"/></center>
+<center><img src="pictures/create-directory-01-desktop.png" style="width: 75%;"/></center>
 
-1. Close or minimize all open windows and right-click on your desktop (**not**
-   on an icon).
+1. Close or minimize all open windows and right-click on your desktop (**not** on an icon).
 1. Move your mouse over to the "*New*" option.
 1. Select the option "*Folder*".
 
-	<center><img src="pictures/create-directory-02-name-directory.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-directory-02-name-directory.png" style="width: 75%;"/></center>
 
 1. Now you should have a new folder created on your desktop, as pictured above.
 
-	<center><img src="pictures/create-directory-03-rename-directory.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-directory-03-rename-directory.png" style="width: 75%;"/></center>
 
-1. Give the folder a name that will help you identify it later, like "*Lua*" or
-   something like that.
+1. Give the folder a name that will help you identify it later, like "*Lua*" or something like that.
 
 Now you should be ready to keep all of your files organized in one place.
 
 #### Changing the Interpreter
 
-At the beginning of the guide, I said that the version of Lua that you'll be
-learning is Lua 5.2. While the versions are all fairly similar, some minor
-discrepancies exist from version to version. In order to keep any of these
-discrepancies from occurring, the interpreter will need to be changed in order
-to reflect this. The **interpreter** is what runs the Lua scripts that you
-write. It converts your code into something that the computer can understand
-and use.  Changing the interpreter is very easy to do, as can be seen below:
+At the beginning of the guide, I said that the version of Lua that you'll be learning is Lua 5.2. While the versions are all fairly similar, some minor discrepancies exist from version to version. In order to keep any of these discrepancies from occurring, the interpreter will need to be changed in order to reflect this. The **interpreter** is what runs the Lua scripts that you write. It converts your code into something that the computer can understand and use.  Changing the interpreter is very easy to do, as can be seen below:
 
-<center><img src="pictures/change-interpreter.png" style="width: 75%;"/>
-</center>
+<center><img src="pictures/change-interpreter.png" style="width: 75%;"/> </center>
 
 1. Open up ZeroBrane and move your mouse to the "*Project*" heading.
 1. Move your mouse down to the "*Lua Interpreter*" section.
@@ -262,126 +144,83 @@ Now your program will be run using the Lua 5.2 interpreter.
 
 #### Running the Console
 
-Each sections in this guide is composed of two parts: **Instruction** and
-**Exercises**. In the instruction section, commands are entered through
-ZeroBrane's interactive console. In the exercises section, a file is created
-and run.
+Each sections in this guide is composed of two parts: **Instruction** and **Exercises**. In the instruction section, commands are entered through ZeroBrane's interactive console. In the exercises section, a file is created and run.
 
 The interactive console can be run like so:
 
-<center><img src="pictures/run-console-01-change.png" style="width: 75%;"/>
-</center>
+<center><img src="pictures/run-console-01-change.png" style="width: 75%;"/> </center>
 
-1. At the bottom of ZeroBrane's window, you should see three tabs, as pictured
-   above.
+1. At the bottom of ZeroBrane's window, you should see three tabs, as pictured above.
 
-	<center><img src="pictures/run-console-02-output.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/run-console-02-output.png" style="width: 75%;"/></center>
 
-1. Move your mouse over to the one labeled "Local console" and select it. You
-   should now see the above text telling you that you are working with the
-   interactive Lua interpreter, also known as the console.
+1. Move your mouse over to the one labeled "Local console" and select it. You should now see the above text telling you that you are working with the interactive Lua interpreter, also known as the console.
 
 #### Creating a New File
 
-In the exercises section, the entire file is executed all at once. You can
-create these files using ZeroBrane, as demonstrated below:
+In the exercises section, the entire file is executed all at once. You can create these files using ZeroBrane, as demonstrated below:
 
 <center><img src="pictures/create-file-01-file-new.png" style="width: 75%;"/>
 </center>
 
-1. At the top of the ZeroBrane window, move your mouse over to "*File*".
-1. Select the option "*New*".
+1. At the top of the ZeroBrane window, move your mouse over to "*File*".  1. Select the option "*New*".
 
-	<center><img src="pictures/create-file-02-untitled.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-file-02-untitled.png" style="width: 75%;"/></center>
 
 1. You should now have a new tab open up next to the "*Welcome*" tab, like so.
 
-	<center><img src="pictures/create-file-03-file-save.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-file-03-file-save.png" style="width: 75%;"/></center>
 
 1. With the file you want to save selected, go to the "*File*" heading.
 
-1. Select the "*Save*" option. The first time that you save the file, you
-   should get a pop-up dialog asking you where you would like to save it, as
-   shown below.
+1. Select the "*Save*" option. The first time that you save the file, you should get a pop-up dialog asking you where you would like to save it, as shown below.
 
-	<center><img src="pictures/create-file-04-file-dialog.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-file-04-file-dialog.png" style="width: 75%;"/></center>
 
-1. You will want to keep all of your files located in logical places so that
-   they are easier to find, such as the folder you made earlier. For this
-   tutorial, I recommend saving all of your files in a folder on your desktop.
-   To do this, select the "*Desktop*" option on the side of the file explorer,
-   as pictured above. If you do not see this option, you will have to go to
-   "*C:\\Users\\YOURNAME\\Desktop\\*", where *YOURNAME* is your username on
-   your computer.
+1. You will want to keep all of your files located in logical places so that they are easier to find, such as the folder you made earlier. For this tutorial, I recommend saving all of your files in a folder on your desktop.  To do this, select the "*Desktop*" option on the side of the file explorer, as pictured above. If you do not see this option, you will have to go to "*C:\\Users\\YOURNAME\\Desktop\\*", where *YOURNAME* is your username on your computer.
 
-	<center><img src="pictures/create-file-05-file-dialog-desktop.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-file-05-file-dialog-desktop.png" style="width: 75%;"/></center>
 
-1. To select the folder that you created earlier, either double-click the
-   folder or select the folder then click "*Open*".
+1. To select the folder that you created earlier, either double-click the folder or select the folder then click "*Open*".
 
-	<center><img src="pictures/create-file-06-file-dialog-name.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/create-file-06-file-dialog-name.png" style="width: 75%;"/></center>
 
-1. Give the file a name by clicking in the box labeled "*File name:*" and
-   giving it a name that you desire, then clicking "*Save*". Here, I have named
-   my program "*test.lua*".
+1. Give the file a name by clicking in the box labeled "*File name:*" and giving it a name that you desire, then clicking "*Save*". Here, I have named my program "*test.lua*".
 
-Once you have created the file, it can be run using the IDE, as demonstrated
-below.
+Once you have created the file, it can be run using the IDE, as demonstrated below.
 
 #### Running the File
 
-In the exercises code sections, files are run. Running a file is simple and
-will comprise the majority of what you do when you're programming.
+In the exercises code sections, files are run. Running a file is simple and will comprise the majority of what you do when you're programming.
 
-<center><img src="pictures/run-project-01-run-dialog.png" style="width: 75%;"/>
-</center>
+<center><img src="pictures/run-project-01-run-dialog.png" style="width: 75%;"/> </center>
 
-1. Create a new blank file, as demonstrated in the section
-   [Creating a New File](#creating-a-new-file).
+1. Create a new blank file, as demonstrated in the section [Creating a New File](#creating-a-new-file).
 1. Move your mouse over to the "*Project*" heading
 1. Select the first option, "*Run*".
 
-	<center><img src="pictures/run-project-02-output.png"
-	style="width: 75%;"/></center>
+	<center><img src="pictures/run-project-02-output.png" style="width: 75%;"/></center>
 
-1. You should see the text below when you run a file. Each line contains
-   information about your program:
+1. You should see the text below when you run a file. Each line contains information about your program:
 
 	1. The first line tells you initial settings and information:
 
-		1. The location of the Lua interpeter that you are using
-		   (`"C:\Program Files (x86)\ZeroBrane\bin\lua52.exe"`).
+		1. The location of the Lua interpeter that you are using (`"C:\Program Files (x86)\ZeroBrane\bin\lua52.exe"`).
 
-		1. The `-e io.stdout:setvbuf('no')"` is a command that is
-		   executed before the code is run. Basically, it makes viewing
-		   the output easier.
+		1. The `-e io.stdout:setvbuf('no')"` is a command that is executed before the code is run. Basically, it makes viewing the output easier.
 
-		1. The location of the file being run
-		   (`"C:\Users\User\Desktop\Lua\test.lua"`).
+		1. The location of the file being run (`"C:\Users\User\Desktop\Lua\test.lua"`).
 
-	1. The second line tells you information about the "*project*", which
-	   is how ZeroBrane groups Lua files:
+	1. The second line tells you information about the "*project*", which is how ZeroBrane groups Lua files:
 
-		1. `lua52.exe` is the name of the interpreter. This shows that
-		   it was started and its directory.
+		1. `lua52.exe` is the name of the interpreter. This shows that it was started and its directory.
 
-		1. The directory
-		   `"C:\Program Files (x86)\ZeroBrane\myprograms"` refers to
-		   the *directory* of the Lua file. The directory allows you to
-		   use multiple files together at once.
+		1. The directory `"C:\Program Files (x86)\ZeroBrane\myprograms"` refers to the *directory* of the Lua file. The directory allows you to use multiple files together at once.
 
 	1. The third line tells you about the output of the project:
 
 		1. It ran in `0.05` seconds.
-		1. Its **PID**, or Project Identification Number, is 8600. This
-		   number is used by ZeroBrane to keep track of your projects.
-		   Your PID will likely be different.
+		1. Its **PID**, or Project Identification Number, is 8600. This number is used by ZeroBrane to keep track of your projects.  Your PID will likely be different.
 
 
 
@@ -389,19 +228,11 @@ will comprise the majority of what you do when you're programming.
 
 ## Variables
 
-Variables contain values. These values can be of several types: `strings`,
-`numbers`, `booleans` and more. The type of a variable represents how it can
-be used and what it is used for. Variables are the building blocks of all good
-code and are an extremely important concept to understand.
+Variables contain values. These values can be of several types: `strings`, `numbers`, `booleans` and more. The type of a variable represents how it can be used and what it is used for. Variables are the building blocks of all good code and are an extremely important concept to understand.
 
 ### Variable Names and Comments
 
-Variables in Lua can be any series of letter or numbers, as long as they don't
-start with a number (the reasoning for this will be given later). Variables can
-also contain underscores, but no other special characters. This is because most
-of these characters are operators, such as addition or subtraction. The
-following are all *valid* variable names (note that you should **not** run the
-following in the interpreter):
+Variables in Lua can be any series of letter or numbers, as long as they don't start with a number (the reasoning for this will be given later). Variables can also contain underscores, but no other special characters. This is because most of these characters are operators, such as addition or subtraction. The following are all *valid* variable names (note that you should **not** run the following in the interpreter): 
 
 ```lua
 variable
@@ -410,8 +241,7 @@ this_name
 luaIsAwesome
 ```
 
-The following are all **not** valid variable names (you should **not** run this
-section either):
+The following are all **not** valid variable names (you should **not** run this section either):
 
 ```lua
 2songName      -- Variables cannot start with numbers
@@ -419,17 +249,9 @@ this variable  -- Variables cannot have spaces
 lua-is-awesome -- Variables can only have underscores, letters, and numbers
 ```
 
-You may have noticed the "`--`" above. These are called **single-line** or
-**one-line comments**. Anything after these two dashes is ignored by the
-interpreter. Comments can be used to document your code. The space after `--`
-does not have to be present, though I prefer the way it looks with it.
+You may have noticed the "`--`" above. These are called **single-line** or **one-line comments**. Anything after these two dashes is ignored by the interpreter. Comments can be used to document your code. The space after `--` does not have to be present, though I prefer the way it looks with it.
 
-You can also do **multi-line** or **block comments**, which are like comments,
-but span multiple lines. They are opened with "`--[[`" and closed with "`]]`".
-Note that with multi-line comments, there must be **no** space between `--` and
-`[[`. You can use multi-line comments, for example, to make notes about valid
-variable names. Open up the command line and type `lua` to go into interactive
-mode and type the following:
+You can also do **multi-line** or **block comments**, which are like comments, but span multiple lines. They are opened with "`--[[`" and closed with "`]]`".  Note that with multi-line comments, there must be **no** space between `--` and `[[`. You can use multi-line comments, for example, to make notes about valid variable names. Open up the command line and type `lua` to go into interactive mode and type the following:
 
 ```lua
 --[[
@@ -448,12 +270,9 @@ lua-is-awesome -- Variables can only have underscores, letters, and numbers
 ]]
 ```
 
-Notice how nothing happens when you finish. That is because you aren't doing
-anything yet. Remember, comments are ignored by the interpreter, so this is
-essentially the same as just hitting enter.
+Notice how nothing happens when you finish. That is because you aren't doing anything yet. Remember, comments are ignored by the interpreter, so this is essentially the same as just hitting enter.
 
-In the above examples, you may have noticed that there are many ways to format
-variable names. There are two prevailing ways to separate words:
+In the above examples, you may have noticed that there are many ways to format variable names. There are two prevailing ways to separate words:
 
 ```lua
 variableNamesLikeThis
@@ -463,68 +282,45 @@ variableNamesLikeThis
 variable_names_like_this
 ```
 
-The first is called `camelCase` and the second is called `snake_case`. In this
-tutorial I will use camel case simply because I prefer it, though both methods
-are perfectly valid.
+The first is called `camelCase` and the second is called `snake_case`. In this tutorial I will use camel case simply because I prefer it, though both methods are perfectly valid.
 
-Note that capitalization **does** matter: `thisVariable` is different from
-`THISVARIABLE` and so on.
+Note that capitalization **does** matter: `thisVariable` is different from `THISVARIABLE` and so on.
 
-Variable names should be short but descriptive. The descriptive part is of more
-importance than the short part, however. Your variable name needs to be
-descriptive to help you remember the purpose of the variable. When in doubt, go
-with verboseness over conciseness. This will save you headaches in the long
-run, by keeping you from having to search all over the place for what your
-variable represents.
+Variable names should be short but descriptive. The descriptive part is of more importance than the short part, however. Your variable name needs to be descriptive to help you remember the purpose of the variable. When in doubt, go with verboseness over conciseness. This will save you headaches in the long run, by keeping you from having to search all over the place for what your variable represents.
 
 ### Assigning and Accessing Variables
 
-You **assign** variables with an equal sign. Assigning a variable just means
-that you are giving the variable a value.  Variable assignment looks like this:
+You **assign** variables with an equal sign. Assigning a variable just means that you are giving the variable a value.  Variable assignment looks like this:
 
 ```lua
 variableName = value
 ```
 
-**Accessing** variables is done by referencing the name of the variable. For
-instance, if you wanted to view the value of a variable, you would do so like
-so (enter this into the Lua command line):
+**Accessing** variables is done by referencing the name of the variable. For instance, if you wanted to view the value of a variable, you would do so like so (enter this into the Lua command line):
 
 ```lua
 variableName = 5
 print( variableName ) -- 5 (You do not need to write comments)
 ```
 
-The `print` command is used to show the output of values and is part of Lua's
-**standard library**. It is called a **function**. A function is something that
-will be explained more later, but essentially it is used to make programming
-easier.
+The `print` command is used to show the output of values and is part of Lua's **standard library**. It is called a **function**. A function is something that will be explained more later, but essentially it is used to make programming easier.
 
 ### Variable Types
 
-In (virtually) all programming languages, variables have what are called
-"types." The type of a variable dictates what the variable is used for. There
-are several types of variables, but the most common are `numbers` `strings`,
-and `booleans`.
+In (virtually) all programming languages, variables have what are called "types." The type of a variable dictates what the variable is used for. There are several types of variables, but the most common are `numbers` `strings`, and `booleans`.
 
 #### Numbers
 
-In the above example, `variableName` must conform to the variable naming
-specifications (see [Variable Names and Comments](#variable-names-and-comments)
-for more) and `value` can be virtually anything. For instance, if you wanted to
-assign a variable to the value of pi, you could do:
+In the above example, `variableName` must conform to the variable naming specifications (see [Variable Names and Comments](#variable-names-and-comments) for more) and `value` can be virtually anything. For instance, if you wanted to assign a variable to the value of pi, you could do:
 
 ```lua
 pi = 3.14
 print( pi ) -- 3.14
 ```
 
-In this example, the variable assigned is a **number**. As mentioned before,
-there are many types of values a variable can store, and each type has
-different uses. Numbers, for instance, are used for mathematical operations.
+In this example, the variable assigned is a **number**. As mentioned before, there are many types of values a variable can store, and each type has different uses. Numbers, for instance, are used for mathematical operations.
 
-Numbers can be stored in many different formats. For instance, if you wanted to
-represent a number in scientific notation, you could do the following:
+Numbers can be stored in many different formats. For instance, if you wanted to represent a number in scientific notation, you could do the following:
 
 ```lua
 speedOfLight = 3e8
@@ -544,13 +340,9 @@ fourteen = 0XE
 print( fourteen ) -- 14
 ```
 
-Note that hex numbers **must** be preceded with `0x` or `0X`. This is the
-representation used to store hexadecimal numbers, as well as part of the reason
-that variable names in Lua cannot be started with numbers, as there would be
-ambiguity as to whether you are referencing a number or assigning a variable.
+Note that hex numbers **must** be preceded with `0x` or `0X`. This is the representation used to store hexadecimal numbers, as well as part of the reason that variable names in Lua cannot be started with numbers, as there would be ambiguity as to whether you are referencing a number or assigning a variable.
 
-You can also perform operations and store those values as numbers. For
-instance:
+You can also perform operations and store those values as numbers. For instance:
 
 ```lua
 pi = 3.14
@@ -559,12 +351,9 @@ area = pi * r ^ 2
 print( area ) -- 3.14
 ```
 
-Note that numbers are evaluated in the same way that you follow order of
-operations, though parenthesis can be used for clarity if desired.
+Note that numbers are evaluated in the same way that you follow order of operations, though parenthesis can be used for clarity if desired.
 
-You can also use a variable in its own assignment if it already has a value.
-For instance, increasing a number by one is called **incrementing** and
-decreasing a variable by one is called **decrementing**. This is done like so:
+You can also use a variable in its own assignment if it already has a value.  For instance, increasing a number by one is called **incrementing** and decreasing a variable by one is called **decrementing**. This is done like so:
 
 ```lua
 numberOfSongs = 3
@@ -576,12 +365,7 @@ print( numberOfSongs ) -- 4
 
 #### Strings
 
-The `string` type is used to store characters. They're called `strings` because
-they contain a "string," or series of characters. The name is somewhat
-confusing, but their usage isn't.  They're used to store virtually any
-information that won't be used as a number or in mathematical operations.
-Strings are surrounded by single quotes or double quotes. The following are all
-strings:
+The `string` type is used to store characters. They're called `strings` because they contain a "string," or series of characters. The name is somewhat confusing, but their usage isn't.  They're used to store virtually any information that won't be used as a number or in mathematical operations.  Strings are surrounded by single quotes or double quotes. The following are all strings:
 
 ```lua
 state = "North Carolina"
@@ -591,9 +375,7 @@ print( state ) -- North Carolina
 print( country ) -- United States of America
 ```
 
-Note that you must open and close the string with the same type of quote. Both
-formats are valid, though I prefer to use single quotes because they're easier
-to type, so that is what I will use throughout the tutorial.
+Note that you must open and close the string with the same type of quote. Both formats are valid, though I prefer to use single quotes because they're easier to type, so that is what I will use throughout the tutorial.
 
 It is possible to mix single and double quotes, like so:
 
@@ -605,17 +387,9 @@ print( sentence ) -- She said "No way Jose!"
 print( response ) -- I said "Yes way Jose!"
 ```
 
-Note the `\"` in the second example. This is called "escaping" and is used to
-contain double quotes in a string surrounded by double quotes. Basically, what
-these do is tell Lua that these quotes are part of the string and do not
-represent the end of the string. Note that, because we used single quotes in
-the first example, there was no need to escape the double quotes (though
-escaping the double quotes there wouldn't be wrong). Single quotes can also be
-escaped.
+Note the `\"` in the second example. This is called "escaping" and is used to contain double quotes in a string surrounded by double quotes. Basically, what these do is tell Lua that these quotes are part of the string and do not represent the end of the string. Note that, because we used single quotes in the first example, there was no need to escape the double quotes (though escaping the double quotes there wouldn't be wrong). Single quotes can also be escaped.
 
-Just as there are operators you can do on numbers, there are operators you can
-use on strings. You can combine strings with the "`..`" operator. This is
-called **concatenating** strings. You can concatenate multiple strings at once.
+Just as there are operators you can do on numbers, there are operators you can use on strings. You can combine strings with the "`..`" operator. This is called **concatenating** strings. You can concatenate multiple strings at once.
 
 ```lua
 part1 = 'this'
@@ -627,15 +401,11 @@ sentence = part1 .. ' ' .. part2 .. ' ' .. part3 .. ' ' .. part4
 print( sentence ) -- this is a test
 ```
 
-Note that strings can be concatenated even if they are not already assigned to
-a variable, as shown in the above demonstration, where the variables have
-already been assigned while the spaces (`' '`) have not.
+Note that strings can be concatenated even if they are not already assigned to a variable, as shown in the above demonstration, where the variables have already been assigned while the spaces (`' '`) have not.
 
 #### Multi-Line Strings
 
-Just as comments can be multiple lines, strings can also be multiple lines. The
-syntax for multi-line strings is very similar to multi-line comments. Recall
-that multi-line comments look like so:
+Just as comments can be multiple lines, strings can also be multiple lines. The syntax for multi-line strings is very similar to multi-line comments. Recall that multi-line comments look like so:
 
 ```lua
 --[[
@@ -659,15 +429,11 @@ without worrying
 print( multiLineString )
 ```
 
-Note that the line after `without worrying` **is** present. To get rid of this
-extra line, simply put the `]]` on the same line as `without worrying`. Also
-note that the first line after `[[` is ignored.
+Note that the line after `without worrying` **is** present. To get rid of this extra line, simply put the `]]` on the same line as `without worrying`. Also note that the first line after `[[` is ignored.
 
 #### Booleans
 
-If numbers store numbers and strings store strings of characters, what do
-booleans store? Booleans store values that represent "thruthiness." Booeleans
-have two values: `true` or `false`.
+If numbers store numbers and strings store strings of characters, what do booleans store? Booleans store values that represent "thruthiness." Booeleans have two values: `true` or `false`.
 
 ```lua
 luaMaster = false
@@ -677,50 +443,32 @@ print( luaMaster ) -- false
 print( luaLearner ) -- true
 ```
 
-Booleans are useful when dealing in absolutes. For instance, if you had a
-variable `carIsRunning`, you would probably use a boolean to represent if the
-car is running or not, because the car can either be on or off. A car cannot be
-between running and not running; that's not possible. Similarly, something that
-a variable represents may only be in two states. Booleans are used to represent
-these variables.
+Booleans are useful when dealing in absolutes. For instance, if you had a variable `carIsRunning`, you would probably use a boolean to represent if the car is running or not, because the car can either be on or off. A car cannot be between running and not running; that's not possible. Similarly, something that a variable represents may only be in two states. Booleans are used to represent these variables.
 
 #### Nil
 
-Nil is a special type of value in Lua. It is the value used when a variable is
-not assigned. For instance, take the example below:
+Nil is a special type of value in Lua. It is the value used when a variable is not assigned. For instance, take the example below:
 
 ```lua
 Index = 1
 print( index ) -- nil
 ```
 
-Note here that the variable assigned is `Index`, while the variable accessed is
-`index`. Because these are different variables (remember: capitalization
-matters), `index` has not been assigned, so it has no value. So, `nil` is the
-value given to variables who have not been assigned.
+Note here that the variable assigned is `Index`, while the variable accessed is `index`. Because these are different variables (remember: capitalization matters), `index` has not been assigned, so it has no value. So, `nil` is the value given to variables who have not been assigned.
 
-You may be wondering: Why is this useful? Why can't Lua just figure out what
-variable I'm going for instead of being so pedantic? Because you don't want
-your programming language to try to "figure out" anything; it should do
-**only** what you tell it to. This is because you can get hard to find errors
-if the program thinks you're trying to type one thing and you mean another.
+You may be wondering: Why is this useful? Why can't Lua just figure out what variable I'm going for instead of being so pedantic? Because you don't want your programming language to try to "figure out" anything; it should do **only** what you tell it to. This is because you can get hard to find errors if the program thinks you're trying to type one thing and you mean another.
 
-Additionally, having the `nil` value is useful for several somewhat complex
-reasons. These will be explained more later, but what you need to know now is
-that it allows you to check if a variable has been assigned or not.
+Additionally, having the `nil` value is useful for several somewhat complex reasons. These will be explained more later, but what you need to know now is that it allows you to check if a variable has been assigned or not.
 
 ### The `type` Command
 
-Just like the `print` command is a part of Lua's standard library, so to is
-another command: `type`. The `type` command is used to get a variable's type.
-For instance, if you ran
+Just like the `print` command is a part of Lua's standard library, so to is another command: `type`. The `type` command is used to get a variable's type.  For instance, if you ran
 
 ```lua
 print( type( 3 ) ) -- number
 ```
 
-You would get `number`. That's because `3` is a number. You can see all the
-variable types represented:
+You would get `number`. That's because `3` is a number. You can see all the variable types represented:
 
 ```lua
 print( type( 'This is a string' ) ) -- string
@@ -732,13 +480,9 @@ This command is useful for getting information about a variable.
 
 ### Why would I want to use variables?
 
-Variables are extremely useful and are the building blocks for a program.
-Variables hold many benefits for programmers:
+Variables are extremely useful and are the building blocks for a program.  Variables hold many benefits for programmers:
 
-- Variables make  your code easier to read and understand. Variables are more
-  descriptive than just numbers or strings. You may not know exactly what
-  `d = 6.28 * r` means or does, but you know exactly what it represents in the
-  example below:
+- Variables make  your code easier to read and understand. Variables are more descriptive than just numbers or strings. You may not know exactly what `d = 6.28 * r` means or does, but you know exactly what it represents in the example below: 
 
 ```lua
 pi = 3.14
@@ -747,9 +491,7 @@ radius = 5
 diameter = tau * radius
 ```
 
-- Variables make changing your code easier. For instance, say your program
-  gets the area and circumference of a circle. This is what your program looks
-  like:
+- Variables make changing your code easier. For instance, say your program gets the area and circumference of a circle. This is what your program looks like: 
 
 ```lua
 radius = 3
@@ -757,12 +499,7 @@ area = 3.14 * radius ^ 2
 circumference = 2 * 3.14 * radius
 ```
 
-- What happens if you decide you want more precision with your results? You
-  would be forced to change every occurrence of `3.14` with whatever the new
-  value is. Of course, in this example, that's only two times. But you can
-  imagine how much of a pain it would be in an actual program. It's easier to
-  use a variable for `pi`, and to just change that one value instead of every
-  individual value, avoiding wasted time and frustration.
+- What happens if you decide you want more precision with your results? You would be forced to change every occurrence of `3.14` with whatever the new value is. Of course, in this example, that's only two times. But you can imagine how much of a pain it would be in an actual program. It's easier to use a variable for `pi`, and to just change that one value instead of every individual value, avoiding wasted time and frustration.
 
 In summary, variables:
 
@@ -771,23 +508,11 @@ In summary, variables:
 
 #### Strings vs Numbers
 
-You may have noticed that strings can store numbers. This may have caused you
-to ask yourself, "How do I decide if I should use a number or a string?" The
-answer is "It depends." For a simple answer, numbers that you will be doing
-mathematical calculations with should be `numbers`, while numbers that will
-only be stored or displayed should be `strings`. For instance, a phone number
-would usually be stored as a `string`, as no calculations will be done with a
-phone number. On the other hand, a person's age would probably be stored as a
-`number`, as, at the very least, it will need to be incremented.
+You may have noticed that strings can store numbers. This may have caused you to ask yourself, "How do I decide if I should use a number or a string?" The answer is "It depends." For a simple answer, numbers that you will be doing mathematical calculations with should be `numbers`, while numbers that will only be stored or displayed should be `strings`. For instance, a phone number would usually be stored as a `string`, as no calculations will be done with a phone number. On the other hand, a person's age would probably be stored as a `number`, as, at the very least, it will need to be incremented.
 
 ### Exercises
 
-In this section, you will create a file that should act as your notes. Feel
-free to add comments liberally to document what it is you're doing and why. I
-recommend making a directory on your `Desktop` to keep all of your files, and
-naming this file something really clever like
-`01 Variable Names and Comments.lua` and opening it with ZeroBrane. Type the
-following information to the file:
+In this section, you will create a file that should act as your notes. Feel free to add comments liberally to document what it is you're doing and why. I recommend making a directory on your `Desktop` to keep all of your files, and naming this file something really clever like `01 Variable Names and Comments.lua` and opening it with ZeroBrane. Type the following information to the file:
 
 ```lua
 info1 = 'This is a string'
@@ -797,8 +522,7 @@ print( info1 )
 print( info2 )
 ```
 
-Now run the project. If you've followed the instructions correctly, the console
-should output something like this:
+Now run the project. If you've followed the instructions correctly, the console should output something like this:
 
 ```
 This is a string
@@ -831,14 +555,9 @@ Let's break down this error:
 
 - `01 Variables and Comments.lua`: This is the file in which the error occurs.
 
-- `13:` This tells you the line on which the error occurred. If the line isn't
-  exactly 13, don't worry. (In fact, it should probably be past 13 because of
-  all the comments you've added!)
+- `13:` This tells you the line on which the error occurred. If the line isn't exactly 13, don't worry. (In fact, it should probably be past 13 because of all the comments you've added!)
 
-- `unexpected symbol near '1'`: This tells you that there is something that was
-  not expected near `1`. If you remember from earlier, variable names in Lua
-  cannot start with numbers. To get rid of this error, change that line to
-  something like this:
+- `unexpected symbol near '1'`: This tells you that there is something that was not expected near `1`. If you remember from earlier, variable names in Lua cannot start with numbers. To get rid of this error, change that line to something like this:
 
 ```lua
 -- 1invalidName = false
@@ -851,10 +570,7 @@ When you run the file again, you should get another error:
 lua: test.lua:14: syntax error near 'bad'
 ```
 
-This time, the syntax error is near `bad`. This is because variables in Lua
-cannot have spaces! The Lua interpreter is expecting something after the space,
-such as a comma or equal-sign. To get rid of this, comment out the line and
-add some notes.
+This time, the syntax error is near `bad`. This is because variables in Lua cannot have spaces! The Lua interpreter is expecting something after the space, such as a comma or equal-sign. To get rid of this, comment out the line and add some notes.
 
 When you run the file again, you should get yet another error:
 
@@ -862,18 +578,13 @@ When you run the file again, you should get yet another error:
 lua: test.lua:15: unfinished string near ''t-bother = true'
 ```
 
-This is because the `'` indicates the start of a string. In Lua, strings can't
-be multiple lines. (Actually, they can, but you need to use special characters
-to indicate this). At any rate, the string isn't enclosed, so the error is
-still valid. Get rid of the quote to get rid of that error message, and add a
-comment noting so. Now, you're greeted with a new error:
+This is because the `'` indicates the start of a string. In Lua, strings can't be multiple lines. (Actually, they can, but you need to use special characters to indicate this). At any rate, the string isn't enclosed, so the error is still valid. Get rid of the quote to get rid of that error message, and add a comment noting so. Now, you're greeted with a new error:
 
 ```
 lua: test.lua:15: syntax error near '-'
 ```
 
-This is because you can't have dashes within a variable name. Comment out the
-line to get rid of the error.
+This is because you can't have dashes within a variable name. Comment out the line to get rid of the error.
 
 Now add the following:
 
@@ -899,8 +610,7 @@ print( multiLineString )
 print( thisVariableIsNil )
 ```
 
-**Remember**: This is supposed to serve as *your* notes. Add more if you think
-it's necessary. (You should have **much** more than I have here).
+**Remember**: This is supposed to serve as *your* notes. Add more if you think it's necessary. (You should have **much** more than I have here).
 
 
 
@@ -908,9 +618,7 @@ it's necessary. (You should have **much** more than I have here).
 
 ## Basic Loops
 
-Sometimes when you are programming, there will be a task that is repeated many
-times. For instance, say you want to print your name five times.  You could
-write something that looks like this:
+Sometimes when you are programming, there will be a task that is repeated many times. For instance, say you want to print your name five times.  You could write something that looks like this:
 
 ```lua
 name = 'John Smith'
@@ -922,22 +630,11 @@ print( name )
 print( name )
 ```
 
-As a programmer, you should strive to be as lazy when typing as possible. This
-means that the above code is a big no-no. The main reason for this is that it
-is difficult to change. Say, for instance, you want to print your name 10
-times. That means copying and pasting everything. (***Hopefully*** you didn't
-consider typing all of that!) This is unwieldy, but manageable. But what
-happens if you want to print your name ***100*** times? This would be a real
-pain to type and would be ridiculous. But what about a **variable** number of
-times? This would be impossible with what you currently know.  Thankfully, Lua
-includes a construct that is ideal for this type of situation: the `for-loop`.
+As a programmer, you should strive to be as lazy when typing as possible. This means that the above code is a big no-no. The main reason for this is that it is difficult to change. Say, for instance, you want to print your name 10 times. That means copying and pasting everything. (***Hopefully*** you didn't consider typing all of that!) This is unwieldy, but manageable. But what happens if you want to print your name ***100*** times? This would be a real pain to type and would be ridiculous. But what about a **variable** number of times? This would be impossible with what you currently know.  Thankfully, Lua includes a construct that is ideal for this type of situation: the `for-loop`.
 
 ### Numeric For-Loops
 
-Instead of writing everything multiple times, you can use what are called
-**numeric for-loops**. The name might be scary, but all it does is do something
-a certain number of times.  This is the basic structure of this loop is (you
-should **not** run this):
+Instead of writing everything multiple times, you can use what are called **numeric for-loops**. The name might be scary, but all it does is do something a certain number of times.  This is the basic structure of this loop is (you should **not** run this):
 
 ```lua
 for VAR = START, END, INCREMENT do
@@ -945,11 +642,7 @@ for VAR = START, END, INCREMENT do
 end
 ```
 
-In the above code, `VAR` is a variable that represents the current index of the
-loop. `START` represents the number at which the loop begins, `END` represents
-the number at which the loop stops, and `INCREMENT` is the amount by which to
-increase (or decrease) `VAR` at the end of each loop. If `INCREMENT` is not
-given, it defaults to `1`.
+In the above code, `VAR` is a variable that represents the current index of the loop. `START` represents the number at which the loop begins, `END` represents the number at which the loop stops, and `INCREMENT` is the amount by which to increase (or decrease) `VAR` at the end of each loop. If `INCREMENT` is not given, it defaults to `1`.
 
 Below is a basic example of a for-loop:
 
