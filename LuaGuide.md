@@ -1046,6 +1046,7 @@ These can all be expressed in Lua as follows:
 | Less than                | `<`            |
 | Greater than or equal to | `>=`           |
 | Less than or equal to    | `<=`           |
+| Modulo                   | `%`            |
 
 It may seem odd that "equal to" is `==`, but it actually makes sense: because `=` is for assignment, `==` is for comparison; it helps to distinguish the two.
 
@@ -1080,6 +1081,17 @@ bool2 = true
 
 if bool1 == bool2 then
 	print( 'These booleans are equal' )
+end
+```
+
+#### Modulo
+
+The `modulo` operator gives the remainder of a number after division. For instance, `4 % 3` is 1, because the result of `4 / 3` is 1 with a remainder of 1. You can use this in many ways. For instance, a number is even if the result of its modulo with 2 is 0.
+
+```lua
+number = 10
+if number % 2 == 0 then
+	print( 'This number is even' )
 end
 ```
 
