@@ -1015,9 +1015,8 @@ for index = 1, 5 do
 end
 ```
 
-In most cases, you will want to increment by one, but you can increment
-by any
-real number. For instance, if you wanted even numbers, you could do:
+In most cases, you will want to increment by one, but you can increment by
+any real number. For instance, if you wanted even numbers, you could do:
 
 ```lua
 for i = 2, 10, 2 do
@@ -1034,12 +1033,9 @@ end
 ```
 
 You can also use a variable as the `STOP` or increment. For instance,
-in the
-above example, where you wanted to print your name a certain amount
-of times,
-you would do something like this, changing `times` to the number of
-times you
-would like to print the person's name.
+in the above example, where you wanted to print your name a certain
+amount of times, you would do something like this, changing `times`
+to the number of times you would like to print the person's name.
 
 ```lua
 name = 'John Smith'
@@ -1051,18 +1047,15 @@ end
 ```
 
 This is **much** better than typing all of the original code out and
-changing
-it all the time.
+changing it all the time.
 
 #### Using the Stop and Increment Controllers
 
 You may remember the parts of the for-loop labeled `STOP` and `INCREMENT`
-from
-before. These two variables work in conjunction with each-other to
-control how
-many times the for-loop loops. The loop will continue until the index
-will have
-surpassed `STOP`. Here are some examples of how different loops work:
+from before. These two variables work in conjunction with each-other
+to control how many times the for-loop loops. The loop will continue
+until the index will have surpassed `STOP`. Here are some examples of
+how different loops work:
 
 ```lua
 for i = 1, 8, 2 do
@@ -1086,17 +1079,15 @@ end
 ]]
 ```
 
-Note that in each of the above examples, if the loop would have
-executed one
-more time, the index would have surpassed `STOP`.
+Note that in each of the above examples, if the loop would have executed
+one more time, the index would have surpassed `STOP`.
 
 ### While-Loops
 
 While loops rely on [booleans](#booleans) to control their flow. A
-while-loop
-executes **while** the condition is true. For instance, if you wanted to
-implement a simple incrementing for-loop, you would do something like
-this:
+while-loop executes **while** the condition is true. For instance, if
+you wanted to implement a simple incrementing for-loop, you would do
+something like this:
 
 ```lua
 index = 1
@@ -1114,10 +1105,9 @@ end
 ```
 
 A look at how the loop works helps to understand why it prints 1-4 and
-not 5.
-This is what the loop looks like at each step of execution (do **not**
-run the
-following code; it is simply an illustration of what is occurring):
+not 5.	This is what the loop looks like at each step of execution (do
+**not** run the following code; it is simply an illustration of what
+is occurring):
 
 ```
 Is 1 < 5? Yes, so:
@@ -1143,15 +1133,13 @@ Is 4 < 5? Yes, so:
 Is 5 < 5? No, so stop.
 ```
 
-Now it is obvious why 5 is not output: the loop only executes while
-the given
-condition is `true`, then quits.
+Now it is obvious why 5 is not output: the loop only executes while the
+given condition is `true`, then quits.
 
 Note that it is **essential** to assign the variable *before* the
-while-loop.
-The concept is a bit complicated, but essentially, you can't compare
-`index`
-and `5` if `index` has no value yet. Consider the following example:
+while-loop.  The concept is a bit complicated, but essentially, you
+can't compare `index` and `5` if `index` has no value yet. Consider the
+following example:
 
 ```lua
 index = nil
@@ -1164,13 +1152,11 @@ end
 Because you have not assigned `index` a value yet, you will get the error
 "Attempt to compare a number with [nil](#nil)." This is because you're
 essentially asking the interpreter to compare `nil` with `5`. Because
-`nil` has
-no value, you cannot compare it with a number, hence causing the error
-above.
+`nil` has no value, you cannot compare it with a number, hence causing
+the error above.
 
 As long as the statement between the `while` and `do` is `true`, the
-loop will
-continue to repeat. The general structure of a while-loop is:
+loop will continue to repeat. The general structure of a while-loop is:
 
 ```lua
 while ( BOOLEAN ) do
@@ -1183,13 +1169,11 @@ updated every loop, you will end up with an **infinite loop**.
 
 #### Infinite Loops
 
-An infinite loop will execute until you terminate the execution. You can
-interrupt the execution of the process by pressing `Ctrl` and `c` at
-the same
-time. This tells the Lua interpreter to quit what it was doing and
-is called
-**breaking** the execution. For instance, type the following into the
-interpreter:
+An infinite loop will execute until you terminate the execution. You
+can interrupt the execution of the process by pressing `Ctrl` and `c`
+at the same time. This tells the Lua interpreter to quit what it was
+doing and is called **breaking** the execution. For instance, type the
+following into the interpreter:
 
 ```lua
 while true do
@@ -1203,10 +1187,8 @@ Notice that this will continue executing until you break it using
 #### Break
 
 There is also a command that can also be used to abort the execution of
-a loop
-called `break`. This is used if you want to stop the execution of a
-loop for
-any reason. Take the following example:
+a loop called `break`. This is used if you want to stop the execution
+of a loop for any reason. Take the following example:
 
 ```lua
 index = 1
@@ -1222,25 +1204,20 @@ end
 print( index ) -- 2
 ```
 
-Note that the code after the `break` command is not executed. This
-is because
-that part is completely ignored because of the `break` command.
+Note that the code after the `break` command is not executed. This is
+because that part is completely ignored because of the `break` command.
 
 The `break` command ended the loop before the execution completed. This
-may not
-seem useful now, but it will become more useful later when you have
-learned
-about more advanced structures, such as `if-then` statements, which
-will be
-discussed in the next section.
+may not seem useful now, but it will become more useful later when you
+have learned about more advanced structures, such as `if-then` statements,
+which will be discussed in the next section.
 
 ### Repeat-Until Loops
 
-Repeat-until loops are very similar to `while` loops. While `while` loops
-execute execute **while** a condition is `true`, `repeat-until` loops
-execute
-until a condition is met. These two loops have the same output, but their
-structure is very different:
+Repeat-until loops are very similar to `while` loops. While `while`
+loops execute execute **while** a condition is `true`, `repeat-until`
+loops execute until a condition is met. These two loops have the same
+output, but their structure is very different:
 
 ```lua
 -- while-loop
@@ -1259,17 +1236,12 @@ until ( i > 4 )
 print( i ) -- 5
 ```
 
-You may be wondering: What is the advantage of using a `while` loop
-versus a
-`repeat` loop? Personal preference is certainly one reason, but there
-is one
-other advantage: a `repeat` loop will **always** execute *at least*
-one time,
-while `while` loops may not execute at all. This may seem odd at first,
-but it
-makes sense: If the initial condition of a `while` loop is `false`,
-the loop
-never executes. Test the following loops out:
+You may be wondering: What is the advantage of using a `while` loop versus
+a `repeat` loop? Personal preference is certainly one reason, but there is
+one other advantage: a `repeat` loop will **always** execute *at least*
+one time, while `while` loops may not execute at all. This may seem
+odd at first, but it makes sense: If the initial condition of a `while`
+loop is `false`, the loop never executes. Test the following loops out:
 
 ```lua
 i = 5
@@ -1289,9 +1261,9 @@ until i > 4
 print( i ) -- 6
 ```
 
-Note that in both of `while` and `repeat` loops, you **can** surround the
-boolean expression with parenthesis if you'd like. In fact, all of the
-following are valid ways to express loops:
+Note that in both of `while` and `repeat` loops, you **can** surround
+the boolean expression with parenthesis if you'd like. In fact, all of
+the following are valid ways to express loops:
 
 ```lua
 i = 0
@@ -1312,20 +1284,16 @@ print( i )
 ```
 
 All of the following are valid, as well as several other ways. This
-is another
-one of the advantages of Lua: you don't have to format your code a
-certain way.
-As long as the entire word is complete (i.e. not separated by a space
-or new
-line), it doesn't matter how the code is formatted. I would **strongly**
-recommend avoiding the third method, however, as it is harder to read and
-understand.
+is another one of the advantages of Lua: you don't have to format your
+code a certain way.  As long as the entire word is complete (i.e. not
+separated by a space or new line), it doesn't matter how the code is
+formatted. I would **strongly** recommend avoiding the third method,
+however, as it is harder to read and understand.
 
 ### Exercises
 
-You may have noticed that for-loops, while-loops, and repeat-until
-loops can
-all be used to do the same things. Start by creating a file called
+You may have noticed that for-loops, while-loops, and repeat-until loops
+can all be used to do the same things. Start by creating a file called
 `02 Basic Loops.lua` and creating a for-loop that counts from 1 to 10:
 
 ```lua
@@ -1334,9 +1302,8 @@ for 1, 10, 1 do
 end
 ```
 
-You should get an error saying `<name> expected near '1'`. That's
-because you
-forgot to assign `index`! Fix it by changing the loop to:
+You should get an error saying `<name> expected near '1'`. That's because
+you forgot to assign `index`! Fix it by changing the loop to:
 
 ```lua
 for index = 1, 10, 1 do
@@ -1352,10 +1319,9 @@ for index = 10, 1 do
 end
 ```
 
-You should notice that there is no new output. This is because the default
-increment is `1`. Because the index is already past `1`, the loop does
-nothing.
-To fix this, change the increment to `-1`.
+You should notice that there is no new output. This is because the
+default increment is `1`. Because the index is already past `1`, the
+loop does nothing.  To fix this, change the increment to `-1`.
 
 Now make a while-loop that counts from 1 to 10:
 
@@ -1368,12 +1334,10 @@ end
 
 You should get an error that says: `attempt to compare nil with a number`.
 That's because you never assigned `counter`. Assign counter to `1`. Now
-you
-should get an output, but wait! The loop prints `2` first, instead of
-`1`. To
-fix this, you need to change `counter` to be `0`. Note that this happens
-because you increment the variable, **then** output it, so while counter
-*starts* at `1`, it becomes `2` before it is displayed.
+you should get an output, but wait! The loop prints `2` first, instead
+of `1`. To fix this, you need to change `counter` to be `0`. Note that
+this happens because you increment the variable, **then** output it,
+so while counter *starts* at `1`, it becomes `2` before it is displayed.
 
 Now make a while-loop that counts from 10 to 1:
 
@@ -1392,18 +1356,14 @@ condition is not `true`, so it never executes. Change that to be
 while downCounter > 1 do
 ```
 
-You should get an infinite loop this time. Remember to break output
-by pressing
-`Ctrl` and `c` at the same time. Can you see why you get an infinite
-loop? It's
-because the condition will never change: 10 > 1, 11 > 1, and so on. You
-need
-to change the reassignment of `downCounter` to decrement (go down by one)
-instead of increment (increase by one).
+You should get an infinite loop this time. Remember to break output by
+pressing `Ctrl` and `c` at the same time. Can you see why you get an
+infinite loop? It's because the condition will never change: 10 > 1,
+11 > 1, and so on. You need to change the reassignment of `downCounter`
+to decrement (go down by one) instead of increment (increase by one).
 
 Finally, make a repeat-until loop that counts from 1 to 10 and another
-that
-counts from 10 to 1. The first one should look something like this:
+that counts from 10 to 1. The first one should look something like this:
 
 ```lua
 repeat
@@ -1413,13 +1373,10 @@ until counter > 9
 ```
 
 You may have been expecting an error because `counter` was not defined,
-but
-instead what you got was an infinite loop. Why is that? Because you used
-`counter` in the first while-loop you created. So you either need
-to reassign
-`counter` or choose another variable (and assign it). Reassign the
-variable
-here, like so:
+but instead what you got was an infinite loop. Why is that? Because you
+used `counter` in the first while-loop you created. So you either need to
+reassign `counter` or choose another variable (and assign it). Reassign
+the variable here, like so:
 
 ```lua
 counter = 0
@@ -1430,8 +1387,7 @@ until counter > 9
 ```
 
 Finally, use a repeat-until loop to count from 10 to 1, using the same
-variable
-as you used for the first repeat-until loop:
+variable as you used for the first repeat-until loop:
 
 ```lua
 repeat
@@ -1449,12 +1405,11 @@ notes!
 
 ## If-Then Statements
 
-Sometimes when you are programming, you only want to do something
-**if** some
-other thing is true. For instance, you may want your while-loop to
-quit after
-it executes 100 times. You would use an **if-then** statement to do this.
-These follow the following structure (you should **not** run this file):
+Sometimes when you are programming, you only want to do something **if**
+some other thing is true. For instance, you may want your while-loop to
+quit after it executes 100 times. You would use an **if-then** statement
+to do this.  These follow the following structure (you should **not**
+run this file):
 
 ```lua
 if ( BOOLEAN ) then
@@ -1475,8 +1430,7 @@ end
 
 You may have noticed by now there are several different ways to compare
 numbers. You've seen some of them, and may be familiar with some, but
-there are
-still several more which will be discussed below.
+there are still several more which will be discussed below.
 
 ### Comparisons
 
@@ -1501,13 +1455,11 @@ These can all be expressed in Lua as follows:
 | Less than or equal to    | `<=`	    |
 
 It may seem odd that "equal to" is `==`, but it actually makes sense:
-because
-`=` is for assignment, `==` is for comparison; it helps to distinguish the
-two.
+because `=` is for assignment, `==` is for comparison; it helps to
+distinguish the two.
 
-You have already seen some of the above operators in the
-[Basic Loops](#basic-loops) section. You can see the operators in-action
-with
+You have already seen some of the above operators in the [Basic
+Loops](#basic-loops) section. You can see the operators in-action with
 some examples (remember to run this on the interactive Lua command line):
 
 ```lua
@@ -1525,8 +1477,7 @@ end
 ```
 
 Note that all of these commands work **only** for numbers, except for
-`==` and
-`~=`, as demonstrated below:
+`==` and `~=`, as demonstrated below:
 
 ```lua
 str1 = 'This is a test'
@@ -1547,10 +1498,8 @@ end
 #### The Length Operator
 
 There is also another operator that *only* can be used with strings:
-`#`, the
-**length** operator.  This gives you the length of a string, in
-characters. For
-instance:
+`#`, the **length** operator.  This gives you the length of a string,
+in characters. For instance:
 
 ```lua
 test1 = 'test'
@@ -1565,11 +1514,10 @@ print( #test3 ) -- 10
 
 #### Assigning Booleans
 
-You've seen before that you can assign booleans by giving it either a
-value of
-`true` or `false`. But a boolean can also be assigned by a value. For
-instance,
-if you wanted to represent that a comparison with a boolean, you could do:
+You've seen before that you can assign booleans by giving it either
+a value of `true` or `false`. But a boolean can also be assigned by a
+value. For instance, if you wanted to represent that a comparison with
+a boolean, you could do:
 
 ```lua
 age = 18
@@ -1581,18 +1529,17 @@ print( 'You can smoke: ', canSmoke ) -- You can smoke: true
 print( 'You can drink: ', canDrink ) -- You can smoke: false
 ```
 
-Note that surrounding the condition in parenthesis, while not required, is
-recommended for clarity.
+Note that surrounding the condition in parenthesis, while not required,
+is recommended for clarity.
 
 Notice that for `canSmoke`, `age >= 18` returns `true`, because `18 >=
-18`. For
-the `canDrink`, however, `18 >= 21` is `false`, so `canDrink` is `false`.
+18`. For the `canDrink`, however, `18 >= 21` is `false`, so `canDrink`
+is `false`.
 
-This is actually how the comparison in if-then statements work, as well
-as the
-while-loops and repeat-until loops. It simply checks if the condition
-is equal
-to `true`. For instance, the following two if statements are equivalent:
+This is actually how the comparison in if-then statements work, as
+well as the while-loops and repeat-until loops. It simply checks if
+the condition is equal to `true`. For instance, the following two if
+statements are equivalent:
 
 ```lua
 name = 'John'
@@ -1611,17 +1558,14 @@ end
 ```
 
 Notice that the parenthesis in the second example are *completely*
-optional,
-though I **strongly** recommend using them for clarity's sake.
+optional, though I **strongly** recommend using them for clarity's sake.
 
 ### Else
 
-But what if the comparison is **not true**? Lua includes an extension
-of the
-if-then statement. This is  called **else**. If the condition is not
-`true`,
-the else branch is executed. The basic structure is (not that you should
-**not** run this):
+But what if the comparison is **not true**? Lua includes an extension of
+the if-then statement. This is	called **else**. If the condition is not
+`true`, the else branch is executed. The basic structure is (not that
+you should **not** run this):
 
 ```lua
 if BOOLEAN then
@@ -1645,10 +1589,8 @@ end
 ### Elseif
 
 Now we have cases for where the boolean is `true` and `false`. But
-what about
-when you want to make multiple comparisons? You *could* do something
-like this
-(note that you should **not** run this):
+what about when you want to make multiple comparisons? You *could*
+do something like this (note that you should **not** run this):
 
 ```lua
 if firstBoolean then
@@ -1667,10 +1609,8 @@ end
 ```
 
 This works, but can become unmanageable very quickly. Instead, Lua has
-what is
-called an **elseif** statement. This is for when a variable can be
-in multiple
-states, such as a string. For instance:
+what is called an **elseif** statement. This is for when a variable can
+be in multiple states, such as a string. For instance:
 
 ```lua
 -- Run this several times, alternating `name` between 'Joe', 'Frank',
@@ -1689,12 +1629,10 @@ else
 end
 ```
 
-Note that capitalization **does** matter. `'frank'` ~= `'Frank'` and so
-on. You
-can even have if statements within if-then statements. For instance,
-if the
-length of the name is the fallback condition for joining the secret club
-mentioned above, you could do this:
+Note that capitalization **does** matter. `'frank'` ~= `'Frank'` and
+so on. You can even have if statements within if-then statements. For
+instance, if the length of the name is the fallback condition for joining
+the secret club mentioned above, you could do this:
 
 ```lua
 name = 'Joe'
@@ -1722,8 +1660,7 @@ end
 ### Boolean Operators
 
 Sometimes you would like to do the same thing if two conditions are
-met. You
-**could** do this:
+met. You **could** do this:
 
 ```lua
 if cond1 then
@@ -1735,9 +1672,8 @@ else
 end
 ```
 
-Other times you would like to only execute code if more than one
-condition is
-met. You **could** do this:
+Other times you would like to only execute code if more than one condition
+is met. You **could** do this:
 
 ```lua
 if cond1 then
@@ -1750,16 +1686,14 @@ end
 ```
 
 Of course, as I'm sure you're probably thinking by now, there are *much*
-better
-alternatives. Both of the above *work*, but are not flexible enough to
-be real
-solutions. Instead, there are two **boolean operators**: **or** and
-**and**.
+better alternatives. Both of the above *work*, but are not flexible
+enough to be real solutions. Instead, there are two **boolean operators**:
+**or** and **and**.
 
 #### Or
 
-Or works just like you'd expect it to: It returns true if *either* of the
-conditions are `true`. For instance:
+Or works just like you'd expect it to: It returns true if *either*
+of the conditions are `true`. For instance:
 
 ```lua
 print( ( 3 > 1 ) or ( 3 > 5 ) ) -- True
@@ -1769,8 +1703,7 @@ print( ( 3 < 1 ) or ( 3 > 5 ) ) -- False
 ```
 
 This can be utilized within the boolean condition for while loops *or*
-if-then
-statements (see what I did there?):
+if-then statements (see what I did there?):
 
 ```lua
 iterations = 0
@@ -1798,8 +1731,7 @@ end
 #### And
 
 While `or` is used for *either* condition, `and` is used for *both*
-conditions.
-For example:
+conditions.  For example:
 
 ```lua
 superCool = true
@@ -1815,16 +1747,13 @@ end
 ```
 
 Try changing around the booleans in the above example to see how that
-affects
-the execution of the code.
+affects the execution of the code.
 
 #### Not
 
 While `and` and `or` work with two conditions, `not` works with only
-one. It
-**negates** the operation. Essentially what it does is swap the
-boolean. For
-instance:
+one. It **negates** the operation. Essentially what it does is swap the
+boolean. For instance:
 
 ```lua
 cool = true
@@ -1835,8 +1764,8 @@ print( notCool ) -- false
 ```
 
 But `not` can be used on more than just booleans. In Lua, anything that
-is not
-`false` or `nil` is `true`, so `not` would make those statements `false`:
+is not `false` or `nil` is `true`, so `not` would make those statements
+`false`:
 
 ```lua
 print( not true ) -- false
@@ -1848,8 +1777,7 @@ print( not nil ) -- true
 ```
 
 You can get the "truthiness" of a value by negating it *twice*. For
-instance,
-you know that a string is "truthy", because
+instance, you know that a string is "truthy", because
 
 ```lua
 print( not not 'This is truthy' ) -- true
@@ -1872,17 +1800,15 @@ end
 ```
 
 Note that, because `SuperCool` is not defined, it evaluates to `nil`,
-causing
-the statement to be `false`.
+causing the statement to be `false`.
 
 ### Using If-Statements with Break
 
 If you recall from the previous section, you learned about the `break`
-command.
-Recall also that, with `if-then` statements, if `BOOLEAN` is `true`,
-the code
-executes. Otherwise, nothing happens. So if you wanted to `break` a
-`while-loop` after 100 executions, you would do something like this:
+command.  Recall also that, with `if-then` statements, if `BOOLEAN` is
+`true`, the code executes. Otherwise, nothing happens. So if you wanted
+to `break` a `while-loop` after 100 executions, you would do something
+like this:
 
 ```lua
 numberOfTimes = 1
@@ -1901,9 +1827,8 @@ end
 ### Exercises
 
 Create a file called `03 Conditionals.lua`. Within it, create an
-if-elseif-else
-statement that determines if a person can join your super secret club. The
-criterion are:
+if-elseif-else statement that determines if a person can join your super
+secret club. The criterion are:
 
 - If they're a guy:
 	- They have to be over 21
@@ -1913,12 +1838,10 @@ criterion are:
 	- They have to be over 18 and under 30
 
 You need specific reasoning as to why they were denied admission to the
-club as
-well.
+club as well.
 
 There are several ways that you could implement this. Try it yourself
-first,
-before looking at the solution below:
+first, before looking at the solution below:
 
 ```lua
 name = 'John'
@@ -1954,27 +1877,20 @@ else
 end
 ```
 
-When you run the file, if you've typed it **exactly** as I have, you
-should get
-the error `lua: 03 Conditionals.lua:29: 'end' expected (to close 'if'
-at line 1
-) near <eof>.` This error may seem confusing at first, but after
-inspection it
-is a little more clear: `<eof>` if just a fancy way to represent the
-**e**nd
-**o**f **f**ile. That's because you're missing the `end` to close the
-`-- Female` if-statement.
+When you run the file, if you've typed it **exactly** as I have,
+you should get the error `lua: 03 Conditionals.lua:29: 'end' expected
+(to close 'if' at line 1) near <eof>.` This error may seem confusing at
+first, but after inspection it is a little more clear: `<eof>` if just
+a fancy way to represent the **e**nd **o**f **f**ile. That's because
+you're missing the `end` to close the `-- Female` if-statement.
 
-Of course, this is not the **only** implementation you can use. As
-with any
-problem, there can be multiple solutions to one problem.
+Of course, this is not the **only** implementation you can use. As with
+any problem, there can be multiple solutions to one problem.
 
 Now say you want to do some error checking to make sure you don't get any
 errors if the user accidentally assigns the value incorrectly. Remember
-the
-[`type`](#the-type-command) command? You can use this with an if-statement
-to
-validate the input:
+the [`type`](#the-type-command) command? You can use this with an
+if-statement to validate the input:
 
 ```lua
 name = 123
