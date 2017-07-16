@@ -1473,3 +1473,128 @@ else
 	end
 end
 ```
+
+Now let's add another example. Say that you want to determine if a number is prime. A number is prime if:
+
+1. The number is only divisible by one and itself
+
+1. The number is an integer
+
+First, let's test if a number is an integer. There are many ways to do this. Recall from earlier, the [modulo](#modulo) operator gives the remainder of division. This may not seem to have any application, but this can be very useful: if a number is divisible by one it's an integer. So, for our prime number checker, let's start by making sure that number is an integer:
+
+```lua
+-- Number to check if it's prime
+number = 3
+
+-- Ensure number is an integer
+if number % 1 == 0 then
+	print( 'The number is prime so far!' )
+else
+	print( 'The number is not an integer, so it\'s not prime' )
+end
+```
+
+Change `number` from `3` to `3.1` to see how the results change.
+
+Now let's add a check to see if the number is divisible by any other numbers. This can be done with a for loop:
+
+```lua
+-- Number to check if it's prime
+number = 3
+
+-- Ensure number is an integer
+if number % 1 == 0 then
+	-- Check if a number is divisible by any other numbers
+	for i = 2, number - 1 do
+		if number % i == 0 then
+			-- Number is divisible by another number
+			print( 'This number is divisible by ', i, 'so it is not prime' )
+		else
+			print( 'This number is prime!' )
+		end
+	end
+else
+	print( 'The number is not an integer, so it\'s not prime' )
+end
+```
+
+Your output should be `This number is prime!`. It appears that everything is working correctly. But change `number` to a prime number other than `3`, such as `5`, and your output will not be what you expected. You should see that it prints `This number is prime!` 3 times! This makes sense if you walk through the for-loop:
+
+```
+number = 5
+
+for i = 2, 4 do
+	i = 2:
+		Is 5 divisible by 2? No, so:
+			This number is prime!
+	i = 3
+		Is 5 divisible by 3? No, so:
+			This number is prime!
+	i = 4
+		Is 5 divisible by 4? No, so:
+			This number is prime!
+```
+
+As you can see what we need is some way to determine if the `if-then` statement is `true` for **all** executions of the `for-loop`. We can use a boolean to represent this:
+
+```lua
+-- Number to check if it's prime
+number = 3
+
+-- Ensure number is an integer
+if number % 1 == 0 then
+	-- Shows whether number is divisible by any other numbers or not
+	isDivisible = false
+
+	-- Check if a number is divisible by any other numbers
+	for i = 2, number - 1 do
+		if number % i == 0 then
+			-- Number is divisible by another number
+			print( 'This number is divisible by ', i, 'so it is not prime' )
+
+			-- number is divisible by another number, so set isDivisible to true
+			isDivisible = true
+		end
+	end
+
+	-- After the loop is done, check if isDivisible is false
+	if not isDivisible then
+		print( 'Our number is prime!' )
+	end
+else
+	print( 'The number is not an integer, so it\'s not prime' )
+end
+```
+
+A keen observer would note that you could even thrown in a `break` statement at the end of the divisibility check, as only one number needs to fail for `isDivisible` to become `true`. Now the code works for *most* cases. But what about negative numbers? Negative numbers are not prime, since the are all divisible by at *least* `1`, `-1`, and themselves. Plus, zero and one are not prime numbers either, so we will need to check for these as well:
+
+```lua
+-- Number to check if it's prime
+number = 3
+
+-- Ensure number is an integer
+if number <= 1 then
+	print( 'This number is not prime: prime numbers must be > 1' )
+elseif number % 1 == 0 then
+	-- Shows whether number is divisible by any other numbers or not
+	isDivisible = false
+
+	-- Check if a number is divisible by any other numbers
+	for i = 2, number - 1 do
+		if number % i == 0 then
+			-- Number is divisible by another number
+			print( 'This number is divisible by ', i, 'so it is not prime' )
+
+			-- number is divisible by another number, so set isDivisible to true
+			isDivisible = true
+		end
+	end
+
+	-- After the loop is done, check if isDivisible is false
+	if not isDivisible then
+		print( 'Our number is prime!' )
+	end
+else
+	print( 'The number is not an integer, so it\'s not prime' )
+end
+```
