@@ -20,8 +20,8 @@ You may be wondering: "Why should I learn Lua?" There are several features
 of Lua that make it ideal as a first language:
 
 - Lua is a small language. This means that it has very few built-in
-commands.  While this may not seem like an advantage at first, there
-are a few reasons why this is beneficial:
+commands. While this may not seem like an advantage at first, there are
+a few reasons why this is beneficial:
 
 	- It makes the language easier to learn.
 
@@ -154,9 +154,9 @@ location where it was downloaded.
 	style="width: 75%;"/></center>
 
 1. When you run the installer, you should be greeted by this pop-up
-dialog box.  If you can't read the text, try holding `Ctrl` and moving
-your mouse wheel.  Select the text under the heading "*Destination
-folder*" so that it appears blue, like pictured above.
+dialog box. If you can't read the text, try holding `Ctrl` and moving
+your mouse wheel. Select the text under the heading "*Destination folder*"
+so that it appears blue, like pictured above.
 
 	<center><img
 	src="pictures/installing-zerobrane-08-choose-install-location.png"
@@ -165,10 +165,10 @@ folder*" so that it appears blue, like pictured above.
 1. Now you need to choose where the program should be installed. For 64
 bit systems, install the program in "*C:\\Program Files (x86)\\ZeroBrane*"
 and for 32 bit systems, install the program in "*C:\\Program
-Files\\ZeroBrane*".  Note that the location does not matter that much;
+Files\\ZeroBrane*". Note that the location does not matter that much;
 it's just good practice to put files in these locations so that they
 are easier to find later on. While installing, you will probably be
-asked to grant administrator privileges.  Allow the program to run with
+asked to grant administrator privileges. Allow the program to run with
 administrator privileges in order to install successfully.
 
 	<center><img
@@ -195,7 +195,7 @@ on your desktop.
 	style="width: 75%;"/></center>
 
 1. You should be greeted with a prompt that looks something like the
-above.	Select "*Browse*" to locate the program.
+above. Select "*Browse*" to locate the program.
 
 	<center><img
 	src="pictures/installing-zerobrane-12-choose-path.png"
@@ -204,7 +204,7 @@ above.	Select "*Browse*" to locate the program.
 1. Navigate to the location of the ZeroBrane Studio executable. If
 you followed the steps above, it should be in "*C:\\Program Files
 (x86)\\ZeroBrane\\*" or "*C:\\Program Files\\ZeroBrane\\*". Select the
-executable called `zbstudio`.  (*Note that the "C:\\" directory is located
+executable called `zbstudio`. (*Note that the "C:\\" directory is located
 in either "This PC" or "My Computer" depending on the age of your system*)
 
 1. Once you have selected the executable, select "*OK*" to continue.
@@ -276,7 +276,7 @@ minor discrepancies exist from version to version. In order to keep any
 of these discrepancies from occurring, the interpreter will need to be
 changed in order to reflect this. The **interpreter** is what runs the
 Lua scripts that you write. It converts your code into something that
-the computer can understand and use.  Changing the interpreter is very
+the computer can understand and use. Changing the interpreter is very
 easy to do, as can be seen below:
 
 <center><img src="pictures/change-interpreter.png" style="width: 75%;"/>
@@ -322,6 +322,7 @@ can create these files using ZeroBrane, as demonstrated below:
 </center>
 
 1. At the top of the ZeroBrane window, move your mouse over to "*File*".
+
 1. Select the option "*New*".
 
 	<center><img src="pictures/create-file-02-untitled.png"
@@ -344,9 +345,9 @@ it, as shown below.
 
 1. You will want to keep all of your files located in logical places so
 that they are easier to find, such as the folder you made earlier. For
-this tutorial, I recommend saving all of your files in a folder on
-your desktop.  To do this, select the "*Desktop*" option on the side of
-the file explorer, as pictured above. If you do not see this option, you
+this tutorial, I recommend saving all of your files in a folder on your
+desktop. To do this, select the "*Desktop*" option on the side of the
+file explorer, as pictured above. If you do not see this option, you
 will have to go to "*C:\\Users\\YOURNAME\\Desktop\\*", where *YOURNAME*
 is your username on your computer.
 
@@ -413,9 +414,10 @@ information about your program:
 	1. The third line tells you about the output of the project:
 
 		1. It ran in `0.05` seconds.
+
 		1. Its **PID**, or Project Identification Number, is
 		8600. This number is used by ZeroBrane to keep track of
-		your projects.	Your PID will likely be different.
+		your projects. Your PID will likely be different.
 
 
 
@@ -461,7 +463,7 @@ with it.
 
 You can also do **multi-line** or **block comments**, which are like
 comments, but span multiple lines. They are opened with "`--[[`" and
-closed with "`]]`".  Note that with multi-line comments, there must be
+closed with "`]]`". Note that with multi-line comments, there must be
 **no** space between `--` and `[[`. You can use multi-line comments, for
 example, to make notes about valid variable names. Open up the command
 line and type `lua` to go into interactive mode and type the following:
@@ -515,7 +517,7 @@ for what your variable represents.
 ### Assigning and Accessing Variables
 
 You **assign** variables with an equal sign. Assigning a variable just
-means that you are giving the variable a value.  Variable assignment
+means that you are giving the variable a value. Variable assignment
 looks like this:
 
 ```lua
@@ -602,10 +604,10 @@ print( area ) -- 3.14
 Note that numbers are evaluated in the same way that you follow order
 of operations, though parenthesis can be used for clarity if desired.
 
-You can also use a variable in its own assignment if it already
-has a value.  For instance, increasing a number by one is called
-**incrementing** and decreasing a variable by one is called
-**decrementing**. This is done like so:
+You can also use a variable in its own assignment if it already has a
+value. For instance, increasing a number by one is called **incrementing**
+and decreasing a variable by one is called **decrementing**. This is
+done like so:
 
 ```lua
 numberOfSongs = 3
@@ -619,9 +621,9 @@ print( numberOfSongs ) -- 4
 
 The `string` type is used to store characters. They're called `strings`
 because they contain a "string," or series of characters. The name
-is somewhat confusing, but their usage isn't.  They're used to
-store virtually any information that won't be used as a number or in
-mathematical operations.  Strings are surrounded by single quotes or
+is somewhat confusing, but their usage isn't. They're used to store
+virtually any information that won't be used as a number or in
+mathematical operations. Strings are surrounded by single quotes or
 double quotes. The following are all strings:
 
 ```lua
@@ -759,7 +761,7 @@ or not.
 
 Just like the `print` command is a part of Lua's standard library,
 so to is another command: `type`. The `type` command is used to get a
-variable's type.  For instance, if you ran
+variable's type. For instance, if you ran
 
 ```lua
 print( type( 3 ) ) -- number
@@ -778,13 +780,13 @@ This command is useful for getting information about a variable.
 
 ### Why would I want to use variables?
 
-Variables are extremely useful and are the building blocks for a program.
-Variables hold many benefits for programmers:
+Variables are extremely useful and are the building blocks for a
+program. Variables hold many benefits for programmers:
 
-- Variables make  your code easier to read and understand. Variables
-are more descriptive than just numbers or strings. You may not know
-exactly what `d = 6.28 * r` means or does, but you know exactly what it
-represents in the example below:
+- Variables make your code easier to read and understand. Variables are
+more descriptive than just numbers or strings. You may not know exactly
+what `d = 6.28 * r` means or does, but you know exactly what it represents
+in the example below:
 
 ```lua
 pi = 3.14
@@ -960,8 +962,8 @@ think it's necessary. (You should have **much** more than I have here).
 ## Basic Loops
 
 Sometimes when you are programming, there will be a task that is repeated
-many times. For instance, say you want to print your name five times.
-You could write something that looks like this:
+many times. For instance, say you want to print your name five times. You
+could write something that looks like this:
 
 ```lua
 name = 'John Smith'
@@ -981,15 +983,15 @@ everything. (***Hopefully*** you didn't consider typing all of that!) This
 is unwieldy, but manageable. But what happens if you want to print your
 name ***100*** times? This would be a real pain to type and would be
 ridiculous. But what about a **variable** number of times? This would
-be impossible with what you currently know.  Thankfully, Lua includes
-a construct that is ideal for this type of situation: the `for-loop`.
+be impossible with what you currently know. Thankfully, Lua includes a
+construct that is ideal for this type of situation: the `for-loop`.
 
 ### Numeric For-Loops
 
-Instead of writing everything multiple times, you can use what are called
-**numeric for-loops**. The name might be scary, but all it does is do
-something a certain number of times.  This is the basic structure of
-this loop is (you should **not** run this):
+Instead of writing everything multiple times, you can use what are
+called **numeric for-loops**. The name might be scary, but all it does
+is do something a certain number of times. This is the basic structure
+of this loop is (you should **not** run this):
 
 ```lua
 for VAR = START, END, INCREMENT do
@@ -1118,7 +1120,7 @@ end
 ```
 
 A look at how the loop works helps to understand why it prints 1-4 and
-not 5.  This is what the loop looks like at each step of execution (do
+not 5. This is what the loop looks like at each step of execution (do
 **not** run the following code; it is simply an illustration of what
 is occurring):
 
@@ -1150,7 +1152,7 @@ Now it is obvious why 5 is not output: the loop only executes while the
 given condition is `true`, then quits.
 
 Note that it is **essential** to assign the variable *before* the
-while-loop.  The concept is a bit complicated, but essentially, you
+while-loop. The concept is a bit complicated, but essentially, you
 can't compare `index` and `5` if `index` has no value yet. Consider the
 following example:
 
@@ -1296,9 +1298,9 @@ while i < 5 do i = i + 1 end
 print( i )
 ```
 
-All of the following are valid, as well as several other ways. This
-is another one of the advantages of Lua: you don't have to format your
-code a certain way.  As long as the entire word is complete (i.e. not
+All of the following are valid, as well as several other ways. This is
+another one of the advantages of Lua: you don't have to format your
+code a certain way. As long as the entire word is complete (i.e. not
 separated by a space or new line), it doesn't matter how the code is
 formatted. I would **strongly** recommend avoiding the third method,
 however, as it is harder to read and understand.
@@ -1334,7 +1336,7 @@ end
 
 You should notice that there is no new output. This is because the
 default increment is `1`. Because the index is already past `1`, the
-loop does nothing.  To fix this, change the increment to `-1`.
+loop does nothing. To fix this, change the increment to `-1`.
 
 Now make a while-loop that counts from 1 to 10:
 
@@ -1345,11 +1347,11 @@ while counter < 10 do
 end
 ```
 
-You should get an error that says: `attempt to compare nil with a number`.
-That's because you never assigned `counter`. Assign counter to `1`. Now
-you should get an output, but wait! The loop prints `2` first, instead
-of `1`. To fix this, you need to change `counter` to be `0`. Note that
-this happens because you increment the variable, **then** output it,
+You should get an error that says: `attempt to compare nil with a
+number`. That's because you never assigned `counter`. Assign counter to
+`1`. Now you should get an output, but wait! The loop prints `2` first,
+instead of `1`. To fix this, you need to change `counter` to be `0`. Note
+that this happens because you increment the variable, **then** output it,
 so while counter *starts* at `1`, it becomes `2` before it is displayed.
 
 Now make a while-loop that counts from 10 to 1:
@@ -1421,7 +1423,7 @@ notes!
 Sometimes when you are programming, you only want to do something **if**
 some other thing is true. For instance, you may want your while-loop to
 quit after it executes 100 times. You would use an **if-then** statement
-to do this.  These follow the following structure (you should **not**
+to do this. These follow the following structure (you should **not**
 run this file):
 
 ```lua
@@ -1531,7 +1533,7 @@ end
 #### The Length Operator
 
 There is also another operator that *only* can be used with strings:
-`#`, the **length** operator.  This gives you the length of a string,
+`#`, the **length** operator. This gives you the length of a string,
 in characters. For instance:
 
 ```lua
@@ -1596,7 +1598,7 @@ optional, though I **strongly** recommend using them for clarity's sake.
 ### Else
 
 But what if the comparison is **not true**? Lua includes an extension of
-the if-then statement. This is  called **else**. If the condition is not
+the if-then statement. This is called **else**. If the condition is not
 `true`, the else branch is executed. The basic structure is (not that
 you should **not** run this):
 
@@ -1761,7 +1763,7 @@ end
 #### And
 
 While `or` is used for *either* condition, `and` is used for *both*
-conditions.  For example:
+conditions. For example:
 
 ```lua
 superCool = true
@@ -1835,7 +1837,7 @@ causing the statement to be `false`.
 ### Using If-Statements with Break
 
 If you recall from the previous section, you learned about the `break`
-command.  Recall also that, with `if-then` statements, if `BOOLEAN` is
+command. Recall also that, with `if-then` statements, if `BOOLEAN` is
 `true`, the code executes. Otherwise, nothing happens. So if you wanted
 to `break` a `while-loop` after 100 executions, you would do something
 like this:
