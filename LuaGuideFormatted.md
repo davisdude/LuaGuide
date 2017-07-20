@@ -450,8 +450,7 @@ run this section either):
 ```lua
 2songName      -- Variables cannot start with numbers
 this variable  -- Variables cannot have spaces
-lua-is-awesome -- Variables can only have underscores, letters,
-and numbers
+lua-is-awesome -- Variables can only have underscores, letters, and numbers
 ```
 
 You may have noticed the "`--`" above. These are called **single-line**
@@ -480,8 +479,7 @@ Invalid variable names:
 -----------------------
 2songName      -- Variables cannot start with numbers
 this variable  -- Variables cannot have spaces
-lua-is-awesome -- Variables can only have underscores, letters,
-and numbers
+lua-is-awesome -- Variables can only have underscores, letters, and numbers
 ]]
 ```
 
@@ -1120,7 +1118,7 @@ end
 ```
 
 A look at how the loop works helps to understand why it prints 1-4 and
-not 5.	This is what the loop looks like at each step of execution (do
+not 5.  This is what the loop looks like at each step of execution (do
 **not** run the following code; it is simply an illustration of what
 is occurring):
 
@@ -1467,13 +1465,13 @@ These can all be expressed in Lua as follows:
 
 | Mathematical expression  | Lua equivalent |
 |--------------------------|----------------|
-| Equal to		   | `==`	    |
-| Not equal to		   | `~=`	    |
-| Greater than		   | `>`	    |
-| Less than		   | `<`	    |
-| Greater than or equal to | `>=`	    |
-| Less than or equal to    | `<=`	    |
-| Modulo		   | `%`	    |
+| Equal to                 | `==`           |
+| Not equal to             | `~=`           |
+| Greater than             | `>`            |
+| Less than                | `<`            |
+| Greater than or equal to | `>=`           |
+| Less than or equal to    | `<=`           |
+| Modulo                   | `%`            |
 
 It may seem odd that "equal to" is `==`, but it actually makes sense:
 because `=` is for assignment, `==` is for comparison; it helps to
@@ -1598,7 +1596,7 @@ optional, though I **strongly** recommend using them for clarity's sake.
 ### Else
 
 But what if the comparison is **not true**? Lua includes an extension of
-the if-then statement. This is	called **else**. If the condition is not
+the if-then statement. This is  called **else**. If the condition is not
 `true`, the else branch is executed. The basic structure is (not that
 you should **not** run this):
 
@@ -1648,8 +1646,7 @@ what is called an **elseif** statement. This is for when a variable can
 be in multiple states, such as a string. For instance:
 
 ```lua
--- Run this several times, alternating `name` between 'Joe', 'Frank',
-and 'Bob'
+-- Run this several times, alternating `name` between 'Joe', 'Frank', and 'Bob'
 name = 'Joe'
 
 if name == 'Joe' then
@@ -1657,8 +1654,7 @@ if name == 'Joe' then
 elseif name == 'Frank' then
 	print( 'Frank is almost cool enough to be a part of our club!' )
 elseif name == 'Bob' then
-	print( 'Bob is definitely not cool enough to be a part of our
-	club!' )
+	print( 'Bob is definitely not cool enough to be a part of our club!' )
 else
 	print( 'Who are you?' )
 end
@@ -1677,8 +1673,7 @@ if name == 'Joe' then
 elseif name == 'Frank' then
 	print( 'Frank is almost cool enough to be a part of our club!' )
 elseif name == 'Bob' then
-	print( 'Bob is definitely not cool enough to be a part of our
-	club!' )
+	print( 'Bob is definitely not cool enough to be a part of our club!' )
 else
 	-- Only let them in if their name is longer than 6 letters
 	nameLength = #name
@@ -1897,8 +1892,7 @@ if male then
 			print( 'Not enough room on our name tags' )
 		end
 	else
-		print( 'Sorry, you\'ll need to come back when you\'re
-		older' )
+		print( 'Sorry, you\'ll need to come back when you\'re older' )
 	end
 else
 	-- Female
@@ -1907,8 +1901,7 @@ else
 			print( 'Come on in, ' .. name )
 		else
 			print( 'Sorry, you\'re way too old!' )
-			print( 'There\'s a retirement home across the
-			street' )
+			print( 'There\'s a retirement home across the street' )
 		end
 	else
 		print( 'You\'re not old enough!' )
@@ -1949,14 +1942,11 @@ else
 				print( 'You\'re in, ' .. name .. '!' )
 				print( 'First round\'s on you!' )
 			else
-				print( 'Sorry, you\'re name is way too
-				long' )
-				print( 'Not enough room on our name
-				tags' )
+				print( 'Sorry, you\'re name is way too long' )
+				print( 'Not enough room on our name tags' )
 			end
 		else
-			print( 'Sorry, you\'ll need to come back when
-			you\'re older' )
+			print( 'Sorry, you\'ll need to come back when you\'re older' )
 		end
 	else
 		-- Female
@@ -1965,8 +1955,7 @@ else
 				print( 'Come on in, ' .. name )
 			else
 				print( 'Sorry, you\'re way too old!' )
-				print( 'There\'s a retirement home across
-				the street' )
+				print( 'There\'s a retirement home across the street' )
 			end
 		else
 			print( 'You\'re not old enough!' )
@@ -2015,8 +2004,7 @@ if number % 1 == 0 then
 	for i = 2, number - 1 do
 		if number % i == 0 then
 			-- Number is divisible by another number
-			print( 'This number is divisible by ', i,
-			'so it is not prime' )
+			print( 'This number is divisible by ', i, 'so it is not prime' )
 		else
 			print( 'This number is prime!' )
 		end
@@ -2064,11 +2052,9 @@ if number % 1 == 0 then
 	for i = 2, number - 1 do
 		if number % i == 0 then
 			-- Number is divisible by another number
-			print( 'This number is divisible by ', i,
-			'so it is not prime' )
+			print( 'This number is divisible by ', i, 'so it is not prime' )
 
-			-- number is divisible by another number, so
-			set isDivisible to true
+			-- number is divisible by another number, so set isDivisible to true
 			isDivisible = true
 		end
 	end
@@ -2105,11 +2091,9 @@ elseif number % 1 == 0 then
 	for i = 2, number - 1 do
 		if number % i == 0 then
 			-- Number is divisible by another number
-			print( 'This number is divisible by ', i,
-			'so it is not prime' )
+			print( 'This number is divisible by ', i, 'so it is not prime' )
 
-			-- number is divisible by another number, so
-			set isDivisible to true
+			-- number is divisible by another number, so set isDivisible to true
 			isDivisible = true
 		end
 	end
