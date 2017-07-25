@@ -233,14 +233,11 @@ In the exercises code sections, files are run. Running a file is simple and will
 
 		1. The directory `"C:\Program Files (x86)\ZeroBrane\myprograms"` refers to the *directory* of the Lua file. The directory allows you to use multiple files together at once.
 
-	1. The third line tells you about the output of the project:
+	1. The third line tells you about the details from the script execution:
 
 		1. It ran in `0.05` seconds.
 
-		1. Its **PID**, or Project Identification Number, is 8600. This number is used by ZeroBrane to keep track of your projects. Your PID will likely be different.
-
-
-
+		1. Its **PID**, or Process Identification Number, is 8600. This number is used by ZeroBrane to keep track of your script while its running and this PID will be different for every script invocation.
 
 
 ## Variables
