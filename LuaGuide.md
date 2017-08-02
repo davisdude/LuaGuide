@@ -1048,6 +1048,8 @@ These can all be expressed in Lua as follows:
 | Less than or equal to    | `<=`           |
 | Modulo                   | `%`            |
 
+You may not be familiar with some of these operators, such as modulo, but don't worry, they will be explained shortly.
+
 It may seem odd that "equal to" is `==`, but it actually makes sense: because `=` is for assignment, `==` is for comparison; it helps to distinguish the two.
 
 You have already seen some of the above operators in the [Basic Loops](#basic-loops) section. You can see the operators in-action with some examples (remember to run this on the interactive Lua command line):
@@ -1097,7 +1099,7 @@ end
 
 #### The Length Operator
 
-There is also another operator that *only* can be used with strings: `#`, the **length** operator. This gives you the length of a string, in characters. For instance:
+There is also another operator that *cannot* be used with numbers or booleans: `#`, the **length** operator. This gives you the length, for instance, of a string, in characters. For instance:
 
 ```lua
 test1 = 'test'
@@ -1108,6 +1110,16 @@ print( #test2 ) -- 5
 
 test3 = 'test again'
 print( #test3 ) -- 10
+```
+
+This can have several applications. For instance, if a user's password must have a certain length, you could alert them:
+
+```lua
+password = 'hunter2'
+
+if #password < 10 then
+	print( 'Error: your password is not long enough!' )
+end
 ```
 
 #### Assigning Booleans
@@ -1224,13 +1236,15 @@ else
 	nameLength = #name
 	if nameLength > 6 then
 		print( 'You\'re in, ' .. name .. '!' )
-	elseif nameLength == 5 then
+	elseif nameLength >= 5 then
 		print( 'You\'re almost cool enough, ' .. name .. '.' )
 	else
 		print( 'Sorry, you\'re not cool enough, ' .. name .. '.' )
 	end
 end
 ```
+
+Notice the first `elseif` statement: the first condition (`if nameLength > 6`) is only `true` if the number is greater than 6, which does **not** include 6. The next statement (`elseif nameLength >= 5`) will *only* trigger if `nameLength` is 5 or 6 letters long.
 
 ### Boolean Operators
 
@@ -1380,7 +1394,7 @@ end
 
 ### Exercises
 
-Create a file called `03 Conditionals.lua`. Within it, create an if-elseif-else statement that determines if a person can join your super secret club. The criterion are:
+Create a file called `03 Conditionals.lua`. Within it, create an if-elseif-else statement that determines if a person can join your super secret club. The criteria are:
 
 - If they're a guy:
 
@@ -1394,7 +1408,7 @@ Create a file called `03 Conditionals.lua`. Within it, create an if-elseif-else 
 
 You need specific reasoning as to why they were denied admission to the club as well.
 
-There are several ways that you could implement this. Try it yourself first, before looking at the solution below:
+There are several ways that you could implement this. See if you can figure it out yourself first, before looking at the solution below:
 
 ```lua
 name = 'John'
@@ -1568,7 +1582,7 @@ end
 
 A keen observer would note that you could even thrown in a `break` statement at the end of the divisibility check, as only one number needs to fail for `isDivisible` to become `true`. Now the code works for *most* cases. But what about negative numbers? Negative numbers are not prime, since the are all divisible by at *least* `1`, `-1`, and themselves. Plus, zero and one are not prime numbers either, so we will need to check for these as well:
 
-```lua
+```diff
 -- Number to check if it's prime
 number = 3
 
@@ -1594,7 +1608,7 @@ elseif number % 1 == 0 then
 	if not isDivisible then
 		print( 'Our number is prime!' )
 	end
-else
-	print( 'The number is not an integer, so it\'s not prime' )
++else
+-	print( 'The number is not an integer, so it\'s not prime' )
 end
 ```
